@@ -43,3 +43,7 @@ MIUI浏览器<br>
 尘白禁区（官服）<br>
 逆水寒<br>
 使命召唤手游<br>
+
+# Others:
+  If you have any comments or suggestions, you can contact 981916119@qq.com.
+  The module is compatible with A-Soul Games Optimization.
