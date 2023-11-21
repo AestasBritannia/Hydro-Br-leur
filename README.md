@@ -31,21 +31,23 @@ QQ<br>
 微博<br>
 菠萝包轻小说<br>
 刺猬猫阅读<br>
-Edge<br>
-MIUI浏览器<br>
+Microsoft Edge<br>
+MIUI浏览器(MIUI Browser)<br>
 高德地图<br>
 京东<br>
 闲鱼<br>
 王者荣耀<br>
 王者荣耀体验服<br>
-原神（官服）<br>
+原神(Genshin Impact)<br>
 崩坏：星穹铁道<br>
+崩坏3<br>
 尘白禁区（官服）<br>
 逆水寒<br>
 使命召唤手游<br>
+和平精英<br>
 
 # Others:
-The module is compatible with A-Soul Games Optimization.
+The module is compatible with A-SOUL Games Optimization.
 
 Supports 2712x1220 resolution point-to-point rendering in Genshin Impact. You need to enable the high-quality option in MIUI Game Turbo, and delete hardware_model_config.xml from the module.
 
