@@ -686,7 +686,7 @@ INSERT INTO "cloud_config" VALUES (3, 'booster_config', 'booster_config', 1, 202
                 "post_process_high":"1620x728;1280x576;1080x486;972x437",
                 "max_resolution":"1920x864;1620x728",
                 "max_resolution_80p":"1296x583",
-                "tex_size_config":"1620x728;1620x728;1920x864",
+                "tex_size_config":"1620x728;1920x864;2712x1220",
                 "tex_size_config_re":"1:1440x648;2:1920x864;3:2400x1080;4:2712x1220;5:2712x1220"
               }
             ],
