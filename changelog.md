@@ -1,0 +1,1 @@
+Adds in-app update support for Magisk
