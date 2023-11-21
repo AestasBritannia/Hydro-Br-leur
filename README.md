@@ -1,4 +1,4 @@
-# Hydro-Br-leur
+# Hydro-BrÛleur
   A magisk module for Corot devices that adds some features contributed by Shadow3, Mly, M7recRAB, Ski, and Hamjin.
 
 # Features:
