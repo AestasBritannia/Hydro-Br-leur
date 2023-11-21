@@ -1,1 +1,2 @@
-Now, you can use volume key to select whether to install certain features
+Adjust vibrance modification by Mly.
+Fixed an issue.
