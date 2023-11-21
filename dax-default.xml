@@ -58,25 +58,25 @@
     <data>
       <ieq-bands>
         <band_ieq frequency="47" target="180"/>
-        <band_ieq frequency="141" target="165"/>
-        <band_ieq frequency="234" target="150"/>
-        <band_ieq frequency="328" target="75"/>
-        <band_ieq frequency="469" target="90"/>
-        <band_ieq frequency="656" target="105"/>
-        <band_ieq frequency="844" target="120"/>
-        <band_ieq frequency="1031" target="125"/>
-        <band_ieq frequency="1313" target="130"/>
-        <band_ieq frequency="1688" target="135"/>
-        <band_ieq frequency="2250" target="140"/>
-        <band_ieq frequency="3000" target="120"/>
-        <band_ieq frequency="3750" target="90"/>
-        <band_ieq frequency="4688" target="60"/>
-        <band_ieq frequency="5813" target="30"/>
-        <band_ieq frequency="7125" target="45"/>
-        <band_ieq frequency="9000" target="60"/>
-        <band_ieq frequency="11250" target="120"/>
+        <band_ieq frequency="141" target="150"/>
+        <band_ieq frequency="234" target="120"/>
+        <band_ieq frequency="328" target="60"/>
+        <band_ieq frequency="469" target="65"/>
+        <band_ieq frequency="656" target="70"/>
+        <band_ieq frequency="844" target="75"/>
+        <band_ieq frequency="1031" target="100"/>
+        <band_ieq frequency="1313" target="125"/>
+        <band_ieq frequency="1688" target="150"/>
+        <band_ieq frequency="2250" target="125"/>
+        <band_ieq frequency="3000" target="100"/>
+        <band_ieq frequency="3750" target="75"/>
+        <band_ieq frequency="4688" target="50"/>
+        <band_ieq frequency="5813" target="25"/>
+        <band_ieq frequency="7125" target="50"/>
+        <band_ieq frequency="9000" target="75"/>
+        <band_ieq frequency="11250" target="50"/>
         <band_ieq frequency="13875" target="150"/>
-        <band_ieq frequency="19688" target="90"/> 
+        <band_ieq frequency="19688" target="75"/> 
       </ieq-bands>
     </data>
   </preset>
@@ -194,19 +194,19 @@
         <band_ieq frequency="469" target="65"/>
         <band_ieq frequency="656" target="70"/>
         <band_ieq frequency="844" target="75"/>
-        <band_ieq frequency="1031" target="175"/>
-        <band_ieq frequency="1313" target="170"/>
-        <band_ieq frequency="1688" target="170"/>
-        <band_ieq frequency="2250" target="175"/>
+        <band_ieq frequency="1031" target="150"/>
+        <band_ieq frequency="1313" target="175"/>
+        <band_ieq frequency="1688" target="175"/>
+        <band_ieq frequency="2250" target="150"/>
         <band_ieq frequency="3000" target="75"/>
         <band_ieq frequency="3750" target="-50"/>
         <band_ieq frequency="4688" target="-75"/>
-        <band_ieq frequency="5813" target="-125"/>
-        <band_ieq frequency="7125" target="-150"/>
-        <band_ieq frequency="9000" target="-125"/>
-        <band_ieq frequency="11250" target="30"/>
-        <band_ieq frequency="13875" target="45"/>
-        <band_ieq frequency="19688" target="60"/> 
+        <band_ieq frequency="5813" target="-150"/>
+        <band_ieq frequency="7125" target="-125"/>
+        <band_ieq frequency="9000" target="-150"/>
+        <band_ieq frequency="11250" target="50"/>
+        <band_ieq frequency="13875" target="150"/>
+        <band_ieq frequency="19688" target="75"/> 
       </ieq-bands>
     </data>
   </preset>
@@ -446,10 +446,10 @@
   </preset>
   <profile id="0" name="Dynamic" group="default">
     <data>
-      <mi-dv-leveler-steering-enable value="true"/>
+      <mi-dv-leveler-steering-enable value="false"/>
       <mi-ieq-steering-enable value="true"/>
       <mi-surround-compressor-steering-enable value="false"/>
-      <mi-adaptive-virtualizer-steering-enable value="true"/>
+      <mi-adaptive-virtualizer-steering-enable value="false"/>
       <volume-modeler-enable value="false"/>
       <drc-metadata/>
       <reverb-suppression-enable value="false"/>
