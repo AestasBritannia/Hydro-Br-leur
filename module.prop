@@ -1,8 +1,8 @@
 id=scene_systemless
 name=Hydro BrÛleur
-version=v2.1 (128)
-versionCode=128
+version=v2.1 (130)
+versionCode=130
 author=AB
 description=A magisk module for Corot devices that adds some features contributed by Shadow3, Mly, M7recRAB, Ski, and Hamjin.
-minMagisk=17000
-updatejson=https://github.com/AestasBritannia/Hydro-Br-leur/releases/tag/Stable
+minMagisk=26300
+updateJson=https://raw.githubusercontent.com/AestasBritannia/Hydro-Br-leur/main/update.json
