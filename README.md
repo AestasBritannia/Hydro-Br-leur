@@ -47,6 +47,6 @@ MIUI浏览器<br>
 # Others:
 The module is compatible with A-Soul Games Optimization.
 
-Support 2712x1220 resolution point-to-point rendering in Genshin Impact, need to enable the high-quality option in MIUI Game Turbo, and delete hardware_model_config.xml from the module.
+Supports 2712x1220 resolution point-to-point rendering in Genshin Impact. You need to enable the high-quality option in MIUI Game Turbo, and delete hardware_model_config.xml from the module.
 
 If you have any comments or suggestions, you can contact 981916119@qq.com.
