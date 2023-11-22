@@ -1,3 +1,7 @@
+134:
+Adds support for Simplified Chinese.
+添加简体中文语言支持。
+
 133：
 Supports Genshin Impact (Worldwide server, Bilibili server and Xiaomi server), Honkai 3rd(all servers), 和平精英.
 Sound effect update in sync with Mly
