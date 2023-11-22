@@ -1,7 +1,8 @@
-136:
+137:
 Adds French (France) support.
 Ajoute le support français (France).
 
+136:
 Honkai 3rd (all servers) now supports 40-120 MEMC.
 
 135:
