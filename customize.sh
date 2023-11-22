@@ -257,11 +257,157 @@ hydro_language_en(){
 fi
 }
 
+hydro_language_fr(){
+    local key_click_1=""
+    local key_click_2=""
+    local key_click_3=""
+    local key_click_4=""
+    local soc=$(getprop ro.hardware)
+    if [[ "$soc" != "mt6985" ]]; then
+        ui_print "Périphérique non pris en charge"
+    exit 2
+    else
+        ui_print "——————————"
+        ui_print "Le module est expérimental"
+        ui_print "Prend uniquement en charge Redmi K60 Ultra et Xiaomi 13T Pro"
+        ui_print "Peut causer des problèmes ou des bugs"
+        ui_print "Attention! "
+        sleep 0.5
+        ui_print "——————————"
+        ui_print "Ce module nécessite Yuni Kernel de Pandora Team pour fonctionner correctement"
+        ui_print "Exécutez 'yuni_fucker.sh' dans /data/adb/modules/scene_systemless après avoir installé le module et le kernel"
+        ui_print "Exécutez 'yuni_update_manual.sh' avant de redémarrer après une mise à jour du kernel"
+        sleep 0.2
+        ui_print "——————————"
+        ui_print "Si vous n'êtes pas clair sur le contenu ci-dessus, "
+        ui_print "vous pouvez choisir de réinstaller ce module après avoir installé/mis à jour le kernel pour contourner l'exécution manuelle"
+        sleep 0.2
+        ui_print "——————————"
+        ui_print "Copiez /misc/hardware_model_config.json dans /sdcard/Android/data/com.miHoYo.Yuanshen/files manuellement si vous utilisez Magisk Alpha"
+        sleep 0.2
+        ui_print "——————————"
+        ui_print "Maintenant, choisissez l'option souhaitée avec le bouton de volume"
+        sleep 0.3
+        ui_print "Volume + : Activer la modification de la vibrance"
+        ui_print "Volume - : Désactiver la modification de la vibrance"
+        while [ "$key_click_1" = "" ]; do
+	        key_click_1=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+	        sleep 0.2
+        done
+        case $key_click_1 in
+	    KEY_VOLUMEUP)
+	        ui_print "--Modification de la vibrance installée"
+	        ;;
+	    *)
+	        ui_print "--Modification de la vibrance désactivée"
+	        rm -rf $MODPATH/system/vendor/firmware
+	        sed -i '/# Vibration/,/# Vibration fin./d' $MODPATH/system.prop
+	        ;;
+        esac
+        sleep 1
+        ui_print "——————————"
+        ui_print "Volume + : Activer l'optimisation du son"
+        ui_print "Volume + : Désactiver l'optimisation du son"
+        while [ "$key_click_2" = "" ]; do
+	        key_click_2=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+	        sleep 0.2
+        done
+        case $key_click_2 in
+	    KEY_VOLUMEUP)
+	        ui_print "--Optimisation du son installée"
+	        ;;
+	    *)
+	        ui_print "--Optimisation du son désactivée"
+	        rm -rf $MODPATH/system/vendor/etc/dolby
+            rm -rf $MODPATH/system/vendor/etc/misound_res.bin
+            rm -rf $MODPATH/system/vendor/etc/misound_res_spk.bin
+            rm -rf $MODPATH/system/vendor/etc/misound_res_headphone.bin
+            rm -rf $MODPATH/system/vendor/etc/default_volume_tables.xml
+            sed -i '/# Audio/,/# Audio fin./d' $MODPATH/system.prop
+	        ;;
+        esac
+        sleep 1
+        ui_print "——————————"
+        ui_print "Volume + : Activer l'affichage du niveau de batterie réel"
+        ui_print "Volume - : Désactiver l'affichage du niveau de batterie réel"
+        while [ "$key_click_3" = "" ]; do
+	        key_click_3=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+	        sleep 0.2
+        done
+        case $key_click_3 in
+	    KEY_VOLUMEUP)
+	        ui_print "--Affichage réel du niveau de batterie activé"
+	        ;;
+	    *)
+	        ui_print "--Affichage réel du niveau de batterie désactivé"
+	        rm -rf $MODPATH/real_batt
+	        sed -i '/# Real-battery by shagow3/,/# Real-battery fin./d' $MODDIR/post-fs-data.sh
+	        ;;
+        esac
+        sleep 1
+        ui_print "——————————"
+        ui_print "Choisissez si vous exécutez le Yuni Kernel sur votre appareil"
+        ui_print "Volume + : Oui"
+        ui_print "Volume - : Non"
+        while [ "$key_click_4" = "" ]; do
+	        key_click_4=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+	        sleep 0.2
+        done
+        case $key_click_4 in
+	    KEY_VOLUMEUP)
+	        ui_print "--Yuni Kernel confirmé"
+	        local lines="persist.sys.auto.vrs=false persist.sys.resolutiontuner.enable=false persist.sys.smartpower.display.enable=false persist.sys.smartpower.intercept.enable=false ro.vendor.magt.mtk_magt_support=0"
+            for line in $(echo $lines | xargs -n1); do
+                grep -q "^$line" /data/adb/modules/yuni_kernel/system.prop
+                if [ $? -eq 0 ]; then
+                sed -i "s/^$line/#$line/" /data/adb/modules/yuni_kernel/system.prop
+                fi
+            done
+            sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules/yuni_kernel/service.sh
+            cp $MODPATH/misc/joyose-9200.sql /data/adb/modules/yuni_kernel/misc
+	        ;;
+	    *)
+	        ui_print "--Yuni Kernel n'est pas installé"
+	        ui_print "--Veuillez le télécharger à partir de la chaîne QQ, ID : 36ul8o5au2"
+	        ;;
+        esac
+        sleep 1
+        ui_print "——————————"
+        ui_print "Installation terminée"
+        cp $MODPATH/localization/fr_FR/module.prop $MODPATH
+        rm -rf $MODPATH/localization
+        sleep 0.2
+        ui_print "Veuillez vous assurer que vous avez pris connaissance des précautions ci-dessus"
+        sleep 0.2
+        ui_print "Maintenant, vous vous en réjouirez !"
+fi
+}
+
+hydro_language_choose_fr_en(){
+    ui_print "——————————"
+    ui_print "Volume + : Français"
+    ui_print "Volume - : English"
+    while [ "$key_click_fe" = "" ]; do
+        key_click_fe=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+        sleep 0.2
+    done
+    case $key_click_fe in
+        KEY_VOLUMEUP)
+            ui_print "--Langue actuelle : Français"
+            hydro_language_fr
+	        ;;
+        *)
+	        ui_print "--Current language: English"
+            hydro_language_en
+	        ;;
+    esac
+}
+
 module_install (){
     ui_print "——————————"
-    ui_print "选择你的语言/Choose your language"
+    ui_print "选择你的语言/Choose your language/Choisissez votre langue"
     ui_print "音量键 + : 简体中文"
-    ui_print "Volume - : English"
+    ui_print "Volume - : English/Français"
     while [ "$key_click_0" = "" ]; do
         key_click_0=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
         sleep 0.2
@@ -272,8 +418,7 @@ module_install (){
             hydro_language_zh
 	        ;;
         *)
-	        ui_print "--Current language: English"
-            hydro_language_en
+            hydro_language_choose_fr_en
 	        ;;
     esac
 }
