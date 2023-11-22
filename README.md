@@ -47,6 +47,7 @@ MIUI浏览器(MIUI Browser)<br>
 和平精英<br>
 暗区突围<br>
 英雄联盟手游<br>
+金铲铲之战<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization.
