@@ -1,3 +1,8 @@
+138:
+Supports 金铲铲之战.
+Adjusts Honkai Impact 3 MEMC strategy to 48 frames to 144 frames and 36 frames to 144 frames (official server only).
+Adjusts the working status of FEAS scheduling under MEMC in Honkai Impact 3 (official server only).
+
 137:
 Adds French (France) support.
 Ajoute le support français (France).
