@@ -45,6 +45,8 @@ MIUI浏览器(MIUI Browser)<br>
 逆水寒<br>
 使命召唤手游<br>
 和平精英<br>
+暗区突围<br>
+英雄联盟手游<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization.
