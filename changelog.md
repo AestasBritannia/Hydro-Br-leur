@@ -1,3 +1,10 @@
+135：
+Adds support for 英雄联盟手游 and 暗区突围.
+Supports 40-120 MEMC for 崩坏3 (Official server).
+
+添加英雄联盟手游、暗区突围支持。
+支持崩坏三（官服）的40-120动态补偿。
+
 134:
 Adds support for Simplified Chinese.
 添加简体中文语言支持。
