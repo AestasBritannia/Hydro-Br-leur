@@ -792,7 +792,7 @@ INSERT INTO "cloud_config" VALUES (3, 'booster_config', 'booster_config', 1, 202
       "com.miHoYo.GenshinImpact#49#144#49#144#0#258,10,-1,18,-1,3,48#258,10,-1,18,-1,3,48#0#273,1,3#65#63#63.5#61.5",
       "com.miHoYo.ys.bilibili#49#144#49#144#0#258,10,-1,18,-1,3,48#258,10,-1,18,-1,3,48#0#273,1,3#65#63#63.5#61.5",
       "com.miHoYo.bh3.bilibili#49#144#49#144#267,3,3#258,10,-1,18,-1,4,48#0#0#273,1,4#65#63#63.5#61.5",
-      "com.miHoYo.bh3#49#144#49#144#267,3,3#258,10,-1,18,-1,4,48#0#0#273,1,4#65#63#63.5#61.5",
+      "com.miHoYo.bh3#49#144#41#120#267,3,3#258,10,-1,18,-1,4,48#258,10,-1,18,-1,4,40#0#273,1,4#65#63#63.5#61.5",
       "com.hermes.h1game#49#144#49#144#267,3,12#0#0#258,40,-1,6#273,1,255#65#63#63.5#61.5",
       "com.duoyi.shenwu3#49#144#49#144#267,3,3#258,10,-1,18,-1,156,48#0#0#273,1,255#65#63#63.5#61.5",
       "com.yh.mmecz.mig#49#144#49#144#267,3,3#258,10,-1,18,-1,158,48#0#0#273,1,255#65#63#63.5#61.5",
@@ -17415,7 +17415,107 @@ INSERT INTO "cloud_config" VALUES (3, 'booster_config', 'booster_config', 1, 202
         },
         {
           "game_name": "com.tencent.mf.uam",
-          "scene_ovrride": []
+          "scene_ovrride": [
+            {
+              "scene_id": 10001,
+              "booster": [
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/boost_affinity#1"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/devices/system/cpu/cpu4/core_ctl/enable#0"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/devices/system/cpu/cpu7/core_ctl/enable#0"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/perfmgr_mtk/parameters/perfmgr_enable#1"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/perfmgr_mtk/parameters/boost_minfreq#Y"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/perfmgr_mtk/parameters/powersave#N"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/scaling_a#500"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/p_freq_level#1"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/load_scaling_x#5"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/p_freq_level#1"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/nor_f_keep#10"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "dev/cpuctl/top-app/cpu.uclamp.latency_sensitive#1"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/kernel/fpsgo/fbt/switch_idleprefer#1"
+                }
+              ],
+              "end": [
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/boost_affinity#0"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/devices/system/cpu/cpu4/core_ctl/enable#1"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/devices/system/cpu/cpu7/core_ctl/enable#1"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/p_freq_level#0"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/perfmgr_mtk/parameters/perfmgr_enable#0"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/perfmgr_mtk/parameters/boost_minfreq#N"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/perfmgr_mtk/parameters/powersave#N"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/p_freq_level#0"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "sys/module/mtk_fpsgo/parameters/nor_f_keep#8"
+                },
+                {
+                  "permission": "root",
+                  "cmd": "dev/cpuctl/top-app/cpu.uclamp.latency_sensitive#0"
+                }
+              ]
+            }
+          ]
         },
         {
           "game_name": "com.netease.party.mi",
