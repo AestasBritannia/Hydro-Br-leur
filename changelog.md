@@ -1,3 +1,7 @@
+139:
+Supports official kernel.
+Improves performance.
+
 138:
 Supports 金铲铲之战.
 Adjusts Honkai Impact 3 MEMC strategy to 48 frames to 144 frames and 36 frames to 144 frames (official server only).
