@@ -1,5 +1,5 @@
 140:
-Adjust per-app config. Now it will apply balanced mode while choosing French/English, performance mode while choosing Chinese.
+Adjust per-app config. Now it will apply balanced mode when choosing French/English, performance mode when choosing Chinese.
 
 139:
 Supports official kernel.
