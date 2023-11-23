@@ -8,6 +8,43 @@ permission_set(){
     $MODDIR/misc/sqlite3 /data/adb/magisk.db "UPDATE settings SET value = 0 WHERE key = 'mnt_ns'"
 }
 
+hydro_official_kernel(){
+    cp $MODPATH/joy_config/official_kernel/joyose-9200.sql $MODPATH/joy_config
+    rm -rf $MODPATH/joy_config/official_kernel
+    rm -rf $MODPATH/joy_config/yuni_kernel
+    rm -rf $MODPATH/tools_manual/yuni_fucker.sh
+    rm -rf $MODPATH/tools_manual/yuni_update_manual.sh
+}
+
+hydro_yuni_kernel(){
+    local lines="persist.sys.auto.vrs=false persist.sys.resolutiontuner.enable=false persist.sys.smartpower.display.enable=false persist.sys.smartpower.intercept.enable=false ro.vendor.magt.mtk_magt_support=0"
+    for line in $(echo $lines | xargs -n1); do
+        grep -q "^$line" /data/adb/modules/yuni_kernel/system.prop
+        if [ $? -eq 0 ]; then
+            sed -i "s/^$line/#$line/" /data/adb/modules/yuni_kernel/system.prop
+        fi
+    done
+    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules/yuni_kernel/service.sh
+    cp $MODPATH/joy_config/yuni_kernel/joyose-9200.sql $MODPATH/joy_config
+    cp $MODPATH/joy_config/joyose-9200.sql /data/adb/modules/yuni_kernel/misc
+    rm -rf $MODPATH/joy_config/official_kernel
+    rm -rf $MODPATH/joy_config/yuni_kernel
+}
+
+hydro_disable_soundfx(){
+    rm -rf $MODPATH/system/vendor/etc/dolby
+    rm -rf $MODPATH/system/vendor/etc/misound_res.bin
+    rm -rf $MODPATH/system/vendor/etc/misound_res_spk.bin
+    rm -rf $MODPATH/system/vendor/etc/misound_res_headphone.bin
+    rm -rf $MODPATH/system/vendor/etc/default_volume_tables.xml
+    sed -i '/# Audio/,/# Audio fin./d' $MODPATH/system.prop
+}
+
+hydro_disable_vibration(){
+    rm -rf $MODPATH/system/vendor/firmware
+    sed -i '/# Vibration/,/# Vibration fin./d' $MODPATH/system.prop
+}
+
 hydro_language_zh(){
     local key_click_1=""
     local key_click_2=""
@@ -48,8 +85,7 @@ hydro_language_zh(){
 	        ;;
 	    *)
 	        ui_print "--已关闭振动修改"
-	        rm -rf $MODPATH/system/vendor/firmware
-	        sed -i '/# Vibration/,/# Vibration fin./d' $MODPATH/system.prop
+	        hydro_disable_vibration
 	        ;;
         esac
         sleep 1
@@ -66,12 +102,7 @@ hydro_language_zh(){
 	        ;;
 	    *)
 	        ui_print "--已关闭音效修改"
-	        rm -rf $MODPATH/system/vendor/etc/dolby
-            rm -rf $MODPATH/system/vendor/etc/misound_res.bin
-            rm -rf $MODPATH/system/vendor/etc/misound_res_spk.bin
-            rm -rf $MODPATH/system/vendor/etc/misound_res_headphone.bin
-            rm -rf $MODPATH/system/vendor/etc/default_volume_tables.xml
-            sed -i '/# Audio/,/# Audio fin./d' $MODPATH/system.prop
+	        hydro_disable_soundfx
 	        ;;
         esac
         sleep 1
@@ -96,7 +127,7 @@ hydro_language_zh(){
         ui_print "——————————"
         ui_print "你的设备是否在运行 Yuni 内核"
         ui_print "音量键 + ：是"
-        ui_print "音量键 - ：否"
+        ui_print "音量键 - ：正在使用官方内核"
         while [ "$key_click_4" = "" ]; do
 	        key_click_4=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
 	        sleep 0.2
@@ -104,19 +135,12 @@ hydro_language_zh(){
         case $key_click_4 in
 	    KEY_VOLUMEUP)
 	        ui_print "--已安装 Yuni 内核，开始进行注入"
-	        local lines="persist.sys.auto.vrs=false persist.sys.resolutiontuner.enable=false persist.sys.smartpower.display.enable=false persist.sys.smartpower.intercept.enable=false ro.vendor.magt.mtk_magt_support=0"
-            for line in $(echo $lines | xargs -n1); do
-                grep -q "^$line" /data/adb/modules/yuni_kernel/system.prop
-                if [ $? -eq 0 ]; then
-                    sed -i "s/^$line/#$line/" /data/adb/modules/yuni_kernel/system.prop
-                fi
-            done
-            sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules/yuni_kernel/service.sh
-            cp $MODPATH/misc/joyose-9200.sql /data/adb/modules/yuni_kernel/misc
+	        hydro_yuni_kernel
 	        ;;
 	    *)
-	        ui_print "--未安装 Yuni 内核"
+	        ui_print "--未安装 Yuni 内核，本模块将使用兼容模式"
 	        ui_print "--请从官方QQ频道下载, id: 36ul8o5au2"
+	        hydro_official_kernel
 	        ;;
         esac
         sleep 1
@@ -174,8 +198,7 @@ hydro_language_en(){
 	        ;;
 	    *)
 	        ui_print "--Vibrance modification disabled"
-	        rm -rf $MODPATH/system/vendor/firmware
-	        sed -i '/# Vibration/,/# Vibration fin./d' $MODPATH/system.prop
+	        hydro_disable_vibration
 	        ;;
         esac
         sleep 1
@@ -192,12 +215,7 @@ hydro_language_en(){
 	        ;;
 	    *)
 	        ui_print "--Sound optimization disabled"
-	        rm -rf $MODPATH/system/vendor/etc/dolby
-            rm -rf $MODPATH/system/vendor/etc/misound_res.bin
-            rm -rf $MODPATH/system/vendor/etc/misound_res_spk.bin
-            rm -rf $MODPATH/system/vendor/etc/misound_res_headphone.bin
-            rm -rf $MODPATH/system/vendor/etc/default_volume_tables.xml
-            sed -i '/# Audio/,/# Audio fin./d' $MODPATH/system.prop
+	        hydro_disable_soundfx
 	        ;;
         esac
         sleep 1
@@ -230,19 +248,13 @@ hydro_language_en(){
         case $key_click_4 in
 	    KEY_VOLUMEUP)
 	        ui_print "--Yuni Kernel confirmed"
-	        local lines="persist.sys.auto.vrs=false persist.sys.resolutiontuner.enable=false persist.sys.smartpower.display.enable=false persist.sys.smartpower.intercept.enable=false ro.vendor.magt.mtk_magt_support=0"
-            for line in $(echo $lines | xargs -n1); do
-                grep -q "^$line" /data/adb/modules/yuni_kernel/system.prop
-                if [ $? -eq 0 ]; then
-                sed -i "s/^$line/#$line/" /data/adb/modules/yuni_kernel/system.prop
-                fi
-            done
-            sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules/yuni_kernel/service.sh
-            cp $MODPATH/misc/joyose-9200.sql /data/adb/modules/yuni_kernel/misc
+	        hydro_yuni_kernel
 	        ;;
 	    *)
 	        ui_print "--Yuni Kernel not installed"
+	        ui_print "--The module will run in compatibility mode"
 	        ui_print "--Please download it from QQ channel, id: 36ul8o5au2"
+	        hydro_official_kernel
 	        ;;
         esac
         sleep 1
@@ -300,8 +312,7 @@ hydro_language_fr(){
 	        ;;
 	    *)
 	        ui_print "--Modification de la vibrance désactivée"
-	        rm -rf $MODPATH/system/vendor/firmware
-	        sed -i '/# Vibration/,/# Vibration fin./d' $MODPATH/system.prop
+	        hydro_disable_vibration
 	        ;;
         esac
         sleep 1
@@ -318,12 +329,7 @@ hydro_language_fr(){
 	        ;;
 	    *)
 	        ui_print "--Optimisation du son désactivée"
-	        rm -rf $MODPATH/system/vendor/etc/dolby
-            rm -rf $MODPATH/system/vendor/etc/misound_res.bin
-            rm -rf $MODPATH/system/vendor/etc/misound_res_spk.bin
-            rm -rf $MODPATH/system/vendor/etc/misound_res_headphone.bin
-            rm -rf $MODPATH/system/vendor/etc/default_volume_tables.xml
-            sed -i '/# Audio/,/# Audio fin./d' $MODPATH/system.prop
+	        hydro_disable_soundfx
 	        ;;
         esac
         sleep 1
@@ -356,19 +362,13 @@ hydro_language_fr(){
         case $key_click_4 in
 	    KEY_VOLUMEUP)
 	        ui_print "--Yuni Kernel confirmé"
-	        local lines="persist.sys.auto.vrs=false persist.sys.resolutiontuner.enable=false persist.sys.smartpower.display.enable=false persist.sys.smartpower.intercept.enable=false ro.vendor.magt.mtk_magt_support=0"
-            for line in $(echo $lines | xargs -n1); do
-                grep -q "^$line" /data/adb/modules/yuni_kernel/system.prop
-                if [ $? -eq 0 ]; then
-                sed -i "s/^$line/#$line/" /data/adb/modules/yuni_kernel/system.prop
-                fi
-            done
-            sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules/yuni_kernel/service.sh
-            cp $MODPATH/misc/joyose-9200.sql /data/adb/modules/yuni_kernel/misc
+	        hydro_kernel_yuni
 	        ;;
 	    *)
 	        ui_print "--Yuni Kernel n'est pas installé"
+	        ui_print "--Ce module fonctionne en mode de compatibilité"
 	        ui_print "--Veuillez le télécharger à partir de la chaîne QQ, ID : 36ul8o5au2"
+	        hydro_official_kernel
 	        ;;
         esac
         sleep 1
