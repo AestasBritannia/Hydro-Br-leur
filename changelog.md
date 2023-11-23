@@ -1,3 +1,6 @@
+140:
+Adjust per-app config. Now it will apply balanced mode while choosing French/English, performance mode while choosing Chinese.
+
 139:
 Supports official kernel.
 Improves performance.
