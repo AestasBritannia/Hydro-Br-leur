@@ -1,3 +1,10 @@
+145:
+Adjust vibrance modification by Mly.
+Adjust FEAS strategy for 王者荣耀.
+Adjust MEMC strategy for 原神（官服）.
+Adjust per-app config.
+Optimize performance.
+
 140:
 Adjust per-app config. Now it will apply balanced mode when choosing French/English, performance mode when choosing Chinese.
 
