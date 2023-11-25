@@ -18,47 +18,16 @@ lock_val() {
     done
 }
 
-mask_val() {
-    if [ -f "$2" ]; then
-        umount "$2"
-        chown root:root "$2"
-        chmod 0666 "$2"
-        echo "$1" >"$2"
-        chmod 0444 "$2"
-        restorecon -R -F "$2"
-
-        TIME="$(date "+%s%N")"
-        touch "/dev/mount_mask/mount_mask_$TIME"
-        echo "$1" >"/dev/mount_mask/mount_mask_$TIME"
-        mount --bind "/dev/mount_mask/mount_mask_$TIME" "$2"
-        restorecon -R -F "$2"
-    fi
-}
-
-# Set SoC on fire
-Danger() {
-    for i in $(seq 0 100); do
-        if [ -d "/sys/class/thermal/thermal_zone$i" ]; then
-            if [ "$(cat /sys/class/thermal/thermal_zone$i/type | grep cpu)" != "" ] ||
-                [ "$(cat /sys/class/thermal/thermal_zone$i/type | grep gpu)" != "" ] ||
-                [ "$(cat /sys/class/thermal/thermal_zone$i/type | grep apu)" != "" ] ||
-                [ "$(cat /sys/class/thermal/thermal_zone$i/type | grep soc)" != "" ]; then
-                if [ "$6" = 0 ]; then
-                    lock_val "disabled" "/sys/class/thermal/thermal_zone$i/mode"
-                else
-                    lock_val "enabled" "/sys/class/thermal/thermal_zone$i/mode"
-                fi
-            fi
-        fi
+wait_until_login() {
+    while [ "$(getprop sys.boot_completed)" != "1" ]; do
+        sleep 1
     done
-    lock_val "MAX_TTJ $1 $1 $1" /sys/kernel/thermal/max_ttj
-    lock_val "TTJ $2 $2 $2" /sys/kernel/thermal/ttj
-    lock_val "MIN_TTJ $3 $3 $3" /sys/kernel/thermal/min_ttj
-    lock_val "600000" "/sys/class/thermal/thermal_zone0/trip_point_0_temp"
+    until [ -d "/data/data/android" ]; do
+        sleep 1
+    done
 }
-Danger 115000 114000 113000 99999 115000 0
 
-# GPU limit modify
+# GPU modify
 lock_val "501" /sys/kernel/ged/hal/dvfs_margin_value
 lock_val "1" /sys/module/ged/parameters/gpu_dvfs_enable
 
@@ -70,11 +39,11 @@ if [ -f $JOY_CFG ]; then
     killall -9 com.xiaomi.joyose
     am force-stop com.xiaomi.joyose
     am kill com.xiaomi.joyose
-    $MODDIR/misc/sqlite3 $TEG_CFG ".read $MODDIR/misc/teg.sql"
+    $MODDIR/joy_config/sqlite3 $TEG_CFG ".read $MODDIR/joy_config/teg.sql"
     if [ "$(getprop ro.hardware)" == "qcom" ]; then
-        $MODDIR/misc/sqlite3 $JOY_CFG ".read $MODDIR/misc/joyose.sql"
+        $MODDIR/joy_config/sqlite3 $JOY_CFG ".read $MODDIR/joy_config/joyose.sql"
     else
-        $MODDIR/misc/sqlite3 $JOY_CFG ".read $MODDIR/misc/joyose-9200.sql"
+        $MODDIR/joy_config/sqlite3 $JOY_CFG ".read $MODDIR/joy_config/joyose-9200.sql"
     fi
     am startservice com.xiaomi.joyose/com.xiaomi.joyose.smartop.SmartOpService
     am startservice com.xiaomi.joyose/com.xiaomi.joyose.securitycenter.GPUTunerService
@@ -84,3 +53,50 @@ fi
 g_pref=$MODDIR/misc/hardware_model_config.json
 g_path=/data/media/0/Android/data/com.miHoYo.Yuanshen/files/hardware_model_config.json
 cp -r $g_pref $g_path
+
+# GKI modification
+BRAND="$(getprop ro.product.brand)"
+init_mem() {
+    if [ -f /proc/sys/vm/extra_free_kbytes ]; then
+        lock_val "8192" /proc/sys/vm/min_free_kbytes
+        lock_val "262144" /proc/sys/vm/extra_free_kbytes
+        lock_val "10" /proc/sys/vm/watermark_scale_factor
+    else
+        lock_val "16384" /proc/sys/vm/min_free_kbytes
+        lock_val "100" /proc/sys/vm/watermark_scale_factor
+    fi
+
+    swapoff /dev/block/zram0
+    lock_val "1" /sys/class/block/zram0/reset
+    lock_val "0" /sys/class/block/zram0/mem_limit
+    lock_val "lz4" /sys/class/block/zram0/comp_algorithm
+    lock_val "$(cat /proc/meminfo | awk 'NR==1{print $2*1536}')" /sys/class/block/zram0/disksize
+
+    mkswap /dev/block/zram0
+    swapon /dev/block/zram0
+    rm /dev/block/zram0
+    touch /dev/block/zram0 /dev/block/zram1
+
+    lock_val "madvise" /sys/kernel/mm/transparent_hugepage/enabled
+    lock_val "1" /sys/kernel/mm/lru_gen/enabled
+    lock_val "1000" /sys/kernel/mm/lru_gen/min_ttl_ms
+}
+
+mkdir -p /dev/mount_mask
+magiskpolicy --live "allow system_server * * *"
+device_config put activity_manager max_cached_processes 65535
+device_config put activity_manager max_phantom_processes 65535
+settings put global settings_enable_monitor_phantom_procs false
+if [ "$BRAND" == "Xiaomi" ] || [ "$BRAND" == "Redmi" ]; then
+    settings put system miui_app_cache_optimization 0
+fi
+
+for i in $(seq 0 7); do
+    lock_val "schedutil" "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_governor"
+    lock_val "walt" "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_governor"
+done
+lock_val "1" /sys/devices/system/cpu/bus_dcvs/DDRQOS/boost_freq
+
+wait_until_login
+init_mem
+# GKI modification fin.
