@@ -1,3 +1,8 @@
+149:
+Optimize performance.
+Adjust strategy for 王者荣耀.
+Optimize per-app config.
+
 145:
 Adjust vibrance modification by Mly.
 Adjust FEAS strategy for 王者荣耀.
