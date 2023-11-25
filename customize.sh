@@ -29,6 +29,7 @@ hydro_yuni_kernel(){
     cp $MODPATH/joy_config/joyose-9200.sql /data/adb/modules/yuni_kernel/misc
     rm -rf $MODPATH/joy_config/official_kernel
     rm -rf $MODPATH/joy_config/yuni_kernel
+    sed -i '/# GKI modification/,/# GKI modification fin./d' $MODPATH/functions.sh
 }
 
 hydro_disable_soundfx(){
@@ -44,6 +45,21 @@ hydro_disable_vibration(){
     rm -rf $MODPATH/system/vendor/firmware
     sed -i '/# Vibration/,/# Vibration fin./d' $MODPATH/system.prop
 }
+
+hydro_power_balanced(){
+    cp $MODPATH/power_config/balanced/power_app_cfg.xml $MODPATH/system/vendor/etc
+    rm -rf $MODPATH/power_config
+}
+
+hydro_power_performance(){
+    cp $MODPATH/power_config/performance/power_app_cfg.xml $MODPATH/system/vendor/etc
+    rm -rf $MODPATH/power_config
+}
+
+hyprop=$MODPATH/module.prop
+description_zh="适用于 Corot 设备的定制优化。感谢 Shadow3, Mly, M7recRAB, Ski, Hamjin."
+description_en="A magisk module for Corot devices that adds some features contributed by Shadow3, Mly, M7recRAB, Ski, and Hamjin."
+description_fr="Un module Magisk pour les appareils Corot qui ajoute certaines fonctionnalités apportées par Shadow3, Mly, M7recRAB, Ski et Hamjin."
 
 hydro_language_zh(){
     local key_click_1=""
@@ -61,12 +77,6 @@ hydro_language_zh(){
         ui_print "可能会导致一些问题和错误"
         ui_print "请注意"
         sleep 0.5
-        ui_print "——————————"
-        ui_print "需要安装Yuni内核以使模块全部功能工作"
-        ui_print "内核安装后，请运行 'yuni_fucker.sh' 在 /data/adb/modules/scene_systemless 内"
-        ui_print "运行 'yuni_update_manual.sh' 在你更新内核后的重启之前"
-        ui_print "如果你没有弄懂以上内容，可以选择在安装/更新内核后重新安装本模块以跳过手动执行"
-        sleep 0.2
         ui_print "——————————"
         ui_print "如果你在使用Magisk Alpha，手动将 /misc/hardware_model_config.json 复制进 /sdcard/Android/data/com.miHoYo.Yuanshen/files 以开启原神的Vulkan支持"
         sleep 0.2
@@ -146,8 +156,7 @@ hydro_language_zh(){
         sleep 1
         ui_print "——————————"
         ui_print "安装完成"
-        cp $MODPATH/localization/zh_CN/module.prop $MODPATH
-        rm -rf $MODPATH/localization
+        sed -i "s/^description=.*$/description=$description_zh/" $hyprop
         sleep 0.2
         ui_print "请确保你已经知晓上述注意事项"
         sleep 0.2
@@ -171,11 +180,6 @@ hydro_language_en(){
         ui_print "May cause some issues or bugs"
         ui_print "Warning! "
         sleep 0.5
-        ui_print "——————————"
-        ui_print "Requires Yuni Kernel by Pandora Team for proper functioning of the module"
-        ui_print "Run 'yuni_fucker.sh' in /data/adb/modules/scene_systemless after installing module and kernel"
-        ui_print "Run 'yuni_update_manual.sh' before rebooting after a kernel update"
-        sleep 0.2
         ui_print "——————————"
         ui_print "If you are not clear about the above content, "
         ui_print "you can opt to reinstall this module after installing/updating the kernel to bypass the manual execution"
@@ -260,8 +264,7 @@ hydro_language_en(){
         sleep 1
         ui_print "——————————"
         ui_print "Installation completed"
-        cp $MODPATH/localization/en_US/module.prop $MODPATH
-        rm -rf $MODPATH/localization
+        sed -i "s/^description=.*$/description=$description_en/" $hyprop
         sleep 0.2
         ui_print "Please ensure that you have been aware of the above precautions"
         sleep 0.2
@@ -285,11 +288,6 @@ hydro_language_fr(){
         ui_print "Peut causer des problèmes ou des bugs"
         ui_print "Attention! "
         sleep 0.5
-        ui_print "——————————"
-        ui_print "Ce module nécessite Yuni Kernel de Pandora Team pour fonctionner correctement"
-        ui_print "Exécutez 'yuni_fucker.sh' dans /data/adb/modules/scene_systemless après avoir installé le module et le kernel"
-        ui_print "Exécutez 'yuni_update_manual.sh' avant de redémarrer après une mise à jour du kernel"
-        sleep 0.2
         ui_print "——————————"
         ui_print "Si vous n'êtes pas clair sur le contenu ci-dessus, "
         ui_print "vous pouvez choisir de réinstaller ce module après avoir installé/mis à jour le kernel pour contourner l'exécution manuelle"
@@ -362,7 +360,7 @@ hydro_language_fr(){
         case $key_click_4 in
 	    KEY_VOLUMEUP)
 	        ui_print "--Yuni Kernel confirmé"
-	        hydro_kernel_yuni
+	        hydro_yuni_kernel
 	        ;;
 	    *)
 	        ui_print "--Yuni Kernel n'est pas installé"
@@ -374,8 +372,7 @@ hydro_language_fr(){
         sleep 1
         ui_print "——————————"
         ui_print "Installation terminée"
-        cp $MODPATH/localization/fr_FR/module.prop $MODPATH
-        rm -rf $MODPATH/localization
+        sed -i "s/^description=.*$/description=$description_fr/" $hyprop
         sleep 0.2
         ui_print "Veuillez vous assurer que vous avez pris connaissance des précautions ci-dessus"
         sleep 0.2
@@ -416,9 +413,11 @@ module_install (){
         KEY_VOLUMEUP)
             ui_print "--已选择语言：简体中文"
             hydro_language_zh
+            hydro_power_performance
 	        ;;
         *)
             hydro_language_choose_fr_en
+            hydro_power_balanced
 	        ;;
     esac
 }
