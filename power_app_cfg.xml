@@ -16,21 +16,19 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_FPS_FBT_GCC_UP_QUOTA_PCT_BY_PID" param1="30"></data>
                     <data cmd="PERF_RES_GPU_FW_IDLE" param1="1"></data>
                     <data cmd="PERF_RES_PM_QOS_CPUIDLE_MCDI_ENABLE" param1="0"></data>
-                    <data cmd="PERF_RES_FRS_TARGET_TEMP" param1="46000"></data>
-                    <data cmd="PERF_RES_FRS_ENABLE" param1="0"></data>
-                    <data cmd="PERF_RES_FRS_THRESHOLD" param1="1"></data>
                     <data cmd="PERF_RES_FPS_FBT_BOOST_AFFINITY_BY_PID" param1="1"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_CFREQ2CAP_M_BY_PID" param1="1800000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_M_BY_PID" param1="2300000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_CFREQ2CAP_BY_PID" param1="2000000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_BY_PID" param1="2400000"></data>
                     <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1200000"></data>
+                    <data cmd="PERF_RES_DRAM_DVFS_QOS_MODE" param1="1"></data>
                     <data cmd="PERF_RES_FPS_GBE1_ENABLE" param1="1"/>
                     <data cmd="PERF_RES_FPS_GBE2_ENABLE" param1="1"/>
                     <data cmd="PERF_RES_FPS_FBT_GCC_DOWN_QUOTA_PCT_BY_PID" param1="10"></data>
-                    <data cmd="PERF_RES_DRAM_DVFS_QOS_MODE" param1="1"></data>
-                    <data cmd="PERF_RES_MAGT_ADVICE_BAT_AVG_CURRENT" param1="1000"></data>
-                    <data cmd="PERF_RES_MAGT_ADVICE_BAT_MAX_CURRENT" param1="1200"></data>
+                    <data cmd="PERF_RES_MAGT_ADVICE_BAT_AVG_CURRENT" param1="800"></data>
+                    <data cmd="PERF_RES_MAGT_ADVICE_BAT_MAX_CURRENT" param1="1000"></data>
+                    <data cmd="PERF_RES_MAGT_THERMAL_AWARE_THRESHOLD" param1="7"></data>
                 </WINDOW>
             </FPS>
             <FPS value="120">
@@ -38,23 +36,40 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_FPS_FBT_BOOST_AFFINITY_BY_PID" param1="3"></data>
                     <data cmd="PERF_RES_FPS_FBT_GCC_DOWN_STEP_BY_PID" param1="2"></data>
                     <data cmd="PERF_RES_FPS_FBT_GCC_UP_QUOTA_PCT_BY_PID" param1="50"></data>
-                    <data cmd="PERF_RES_FRS_TARGET_TEMP" param1="48000"></data>
-                    <data cmd="PERF_RES_FRS_MAX_FPS_DIFF" param1="5"></data>
-                    <data cmd="PERF_RES_FRS_THRESHOLD" param1="3"></data>
-                    <data cmd="PERF_RES_FRS_LIMIT_CFREQ_M" param1="2300000"></data>
-                    <data cmd="PERF_RES_FRS_LIMIT_RFREQ_M" param1="2300000"></data>
-                    <data cmd="PERF_RES_FRS_LIMIT_CFREQ" param1="2200000"></data>
-                    <data cmd="PERF_RES_FRS_LIMIT_RFREQ" param1="2200000"></data>
                     <data cmd="PERF_RES_FPS_FBT_QR_T2WNT_Y_P_BY_PID" param1="20"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_CFREQ2CAP_M_BY_PID" param1="2600000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_M_BY_PID" param1="3000000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_CFREQ2CAP_BY_PID" param1="2600000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_BY_PID" param1="3200000"></data>
                     <data cmd="PERF_RES_FPS_FBT_GCC_DOWN_QUOTA_PCT_BY_PID" param1="40"></data>
+                    <data cmd="PERF_RES_FRS_TZ_INDEX" param1="39"></data>
+                    <data cmd="PERF_RES_GPU_FW_IDLE" param1="1"></data>
+                    <data cmd="PERF_RES_FRS_THRESHOLD" param1="5"></data>
+                    <data cmd="PERF_RES_FRS_MODE" param1="1"></data>
+                    <data cmd="PERF_RES_FPS_GBE_CPU_0" param1="1500000"></data>
+                    <data cmd="PERF_RES_FPS_GBE_CPU_1" param1="2000000"></data>
+                    <data cmd="PERF_RES_FPS_GBE_POLICY_MASK" param1="384"></data>
+                    <data cmd="PERF_RES_FPS_GBE2_ENABLE" param1="1"></data>
+                    <data cmd="PERF_RES_FPS_GBE2_TIMER2_MS" param1="3000"></data>
+                    <data cmd="PERF_RES_FPS_GBE2_MAX_BOOST_CNT" param1="3"></data>
+                    <data cmd="PERF_RES_FPS_GBE2_TIMER1_MS" param1="500"></data>
+                    <data cmd="PERF_RES_FPS_FBT_MINITOP_THRS_HEAVY" param1="101"></data>
+                    <data cmd="PERF_RES_FPS_FPSGO_SPID" param1="1"></data>
+                    <data cmd="PERF_RES_FPS_FBT_QR_T2WNT_Y_N" param1="20"></data>
+                    <data cmd="PERF_RES_FPS_FBT_GCC_DOWN_STEP" param1="2"></data>
+                    <data cmd="PERF_RES_FPS_FBT_GCC_UP_QUOTA_PCT" param1="20"></data>
+                    <data cmd="PERF_RES_FPS_FPSGO_EMA2_ENABLE" param1="1"></data>
+                    <data cmd="PERF_RES_NET_BT_AUDIO_LOW_LATENCY" param1="1"></data>
+                    <data cmd="PERF_RES_FPS_FPSGO_FILTER_DEP_TASK_ENABLE_BY_PID" param1="1"></data>
+                    <data cmd="PERF_RES_PM_QOS_CPUIDLE_MCDI_ENABLE" param1="0"></data>
+                    <data cmd="PERF_RES_DRAM_DVFS_QOS_MODE" param1="1"></data>
+                    <data cmd="PERF_RES_GPU_RECLAIM_POLICY" param1="1"></data>
+                    <data cmd="PERF_RES_CPUCORE_PERF_MODE" param1="1"></data>
+                    <data cmd="PERF_RES_SCHED_CORE_CTL_POLICY_ENABLE" param1="0"></data>
+                    <data cmd="PERF_RES_FPS_FBT_QR_T2WNT_Y_N_BY_PID" param1="20"></data>
+                    <data cmd="PERF_RES_FPS_FBT_QR_T2WNT_Y_P_BY_PID" param1="30"></data>
                     <data cmd="PERF_RES_KSWAPD_AFFINITY" param1="32539"></data>
                     <data cmd="PERF_RES_DRAM_CM_MGR_DSU_HINT" param1="2"></data>
-                    <data cmd="PERF_RES_FPS_GBE1_ENABLE" param1="1"/>
-                    <data cmd="PERF_RES_FPS_GBE2_ENABLE" param1="1"/>
                 </WINDOW>
             </FPS>
         </Activity>
@@ -248,11 +263,12 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_M_BY_PID" param1="2600000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_CFREQ2CAP_BY_PID" param1="2300000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_BY_PID" param1="2400000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1800000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="2850000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="3050000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1500000"></data>
                     <data cmd="PERF_RES_FPS_GBE1_ENABLE" param1="0"></data>
                     <data cmd="PERF_RES_FPS_GBE2_ENABLE" param1="0"></data>
+                    <data cmd="PERF_RES_DRAM_DVFS_QOS_MODE" param1="1"></data>
+                    <data cmd="PERF_RES_GPU_RECLAIM_POLICY" param1="1"></data>
+                    <data cmd="PERF_RES_CPUCORE_PERF_MODE" param1="1"></data>
                     <data cmd="PERF_RES_DRAM_CM_MGR_DSU_HINT" param1="2"></data>
                     <data cmd="PERF_RES_FPS_FSTB_GPU_SLOWDOWN_CHECK" param1="1"></data>
                     <data cmd="PERF_RES_FPS_FBT_BOOST_AFFINITY_BY_PID" param1="1"></data>
@@ -268,11 +284,12 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_M_BY_PID" param1="2600000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_CFREQ2CAP_BY_PID" param1="2300000"></data>
                     <data cmd="PERF_RES_FPS_FBT_LIMIT_RFREQ2CAP_BY_PID" param1="2400000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1800000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="2850000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="3050000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1500000"></data>
                     <data cmd="PERF_RES_FPS_GBE1_ENABLE" param1="0"></data>
                     <data cmd="PERF_RES_FPS_GBE2_ENABLE" param1="0"></data>
+                    <data cmd="PERF_RES_GPU_RECLAIM_POLICY" param1="1"></data>
+                    <data cmd="PERF_RES_CPUCORE_PERF_MODE" param1="1"></data>
+                    <data cmd="PERF_RES_DRAM_DVFS_QOS_MODE" param1="1"></data>
                     <data cmd="PERF_RES_DRAM_CM_MGR_DSU_HINT" param1="2"></data>
                     <data cmd="PERF_RES_FPS_FSTB_GPU_SLOWDOWN_CHECK" param1="1"></data>
                     <data cmd="PERF_RES_FPS_FBT_BOOST_AFFINITY_BY_PID" param1="1"></data>
@@ -327,7 +344,6 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_SCHED_CORE_CTL_POLICY_ENABLE" param1="0"></data>
                     <data cmd="PERF_RES_FPS_FBT_QR_T2WNT_Y_N_BY_PID" param1="20"></data>
                     <data cmd="PERF_RES_FPS_FBT_QR_T2WNT_Y_P_BY_PID" param1="30"></data>
-                    <data cmd="PERF_RES_DRAM_DVFS_QOS_MODE" param1="1"></data>
                 </WINDOW>
                 <WINDOW mode="Single">
                     <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1200000"></data>
@@ -1803,7 +1819,6 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_TA" param1="0"></data>
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_FG" param1="1"></data>
                     <data cmd="PERF_RES_FPS_FPSGO_BOOST_AFFINITY" param1="0"></data>
-                    <data cmd="PERF_RES_FPS_FBT_BOOST_AFFINITY_BY_PID" param1="3"></data>
                 </WINDOW>
             </FPS>
         </Activity>
@@ -1938,7 +1953,7 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_FPS_FBT_QR_T2WNT_Y_P_BY_PID" param1="30"></data>
                 </WINDOW>
                 <WINDOW mode="Single">
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="900000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1500000"></data>
                     <data cmd="PERF_RES_FPS_FBT_CEILING_ENABLE" param1="1"></data>
                     <data cmd="PERF_RES_FPS_FBT_BHR_OPP" param1="2"></data>
                 </WINDOW>
@@ -1973,9 +1988,9 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_FG" param1="1"></data>
                     <data cmd="PERF_RES_FPS_FPSGO_BOOST_AFFINITY" param1="1"></data>
                     <data cmd="PERF_RES_SCHED_CORE_CTL_POLICY_ENABLE" param1="1"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1500000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="2600000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="2800000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1200000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="1800000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="2400000"></data>
                 </WINDOW>
             </FPS>
         </Activity>
@@ -2005,8 +2020,8 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_FG" param1="1"></data>
                     <data cmd="PERF_RES_SCHED_CORE_CTL_POLICY_ENABLE" param1="1"></data>
                     <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1200000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="2600000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="2800000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="2400000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_2" param1="2600000"></data>
                 </WINDOW>
             </FPS>
         </Activity>
@@ -2252,8 +2267,6 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_TA" param1="1"></data>
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_BG" param1="1"></data>
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_FG" param1="1"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1200000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="2600000"></data>
                 </WINDOW>
             </FPS>
         </Activity>
@@ -2265,8 +2278,6 @@ any software that is unrelated to enhancing end-user experience. -->
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_TA" param1="1"></data>
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_BG" param1="1"></data>
                     <data cmd="PERF_RES_SCHED_PREFER_IDLE_FG" param1="1"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="1200000"></data>
-                    <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="2600000"></data>
                 </WINDOW>
             </FPS>
         </Activity>
