@@ -1,8 +1,13 @@
+156:
+*Experimental*
+Fixed the problem that the real power display function does not work.
+Disable Super Resolution function for 王者荣耀, 尘白禁区, Honkai Impact 3.
+Adjust MEMC strategy for 尘白禁区, Citra.
+
 154:
 *Experimental*
 Enable dual-MEMC and low-latency mode for 崩坏3（官服）, 王者荣耀 and 原神（官服）.
 Change SDR2HDR setting for 原神（官服）, 王者荣耀 and 崩坏3（官服）.
-Fixed the problem that the real power display function does not work.
 
 153:
 Support Honkai: Star Rail (worldwide server).
