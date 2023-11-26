@@ -48,6 +48,7 @@ MIUI浏览器(MIUI Browser)<br>
 暗区突围<br>
 英雄联盟手游<br>
 金铲铲之战<br>
+Citra 3DS Emulator<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization.
