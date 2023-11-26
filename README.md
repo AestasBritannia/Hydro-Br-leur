@@ -39,7 +39,7 @@ MIUI浏览器(MIUI Browser)<br>
 王者荣耀<br>
 王者荣耀体验服<br>
 原神(Genshin Impact)<br>
-崩坏：星穹铁道<br>
+崩坏：星穹铁道(Honkai: Star Rail)<br>
 崩坏3<br>
 尘白禁区（官服）<br>
 逆水寒<br>
