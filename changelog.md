@@ -1,3 +1,8 @@
+153:
+Supports Honkai: Star Rail (worldwide server).
+Increases the speaker volume when Dolby Atmos is enabled.
+Fixed an issue.
+
 150:
 Optimize performance.
 Adjust strategy for 王者荣耀.
