@@ -1,3 +1,7 @@
+158:
+Synchronize mly's vibration modifications.
+Fixed an issue.
+
 156:
 *Experimental*
 Fixed the problem that the real power display function does not work.
