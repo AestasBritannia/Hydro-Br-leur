@@ -1,3 +1,7 @@
+163:
+*Experimental*
+Supports Pixelworks X7 parameter configuration, Pandora FEAS parameter configuration, and MIUI frame lock configuration for any App.
+
 162:
 Fixed some issues.
 
