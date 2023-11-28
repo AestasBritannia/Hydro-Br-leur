@@ -1,3 +1,7 @@
+164:
+*Experimental*
+Iris Helper now has a lower performance cost.
+
 163:
 *Experimental*
 Supports Pixelworks X7 parameter configuration, Pandora FEAS parameter configuration, and MIUI frame lock configuration for any App.
