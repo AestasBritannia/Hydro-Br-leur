@@ -16,6 +16,8 @@ A magisk module for Corot devices that adds some features contributed by Shadow3
   
   7. Supports displaying real battery level, thanks to @Shadow3.
 
+  8. Supports Pixelworks X7 parameter configuration, Pandora FEAS parameter configuration, and MIUI frame lock configuration for any App.
+
 # Supported Apps:
 QQ<br>
 微信<br>
