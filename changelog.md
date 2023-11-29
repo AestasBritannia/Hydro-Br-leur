@@ -1,3 +1,8 @@
+170:
+Modify the frame insertion (MEMC) parameter configuration of all default games in joyose.  
+Modify the default configuration file of Iris Helper to make it compatible with joyose's preset.
+If you are using an older version, please manually copy the presets in the module directory.
+
 169:
 Fixed an issue.
 Added an user guide for Iris Helper.
