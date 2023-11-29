@@ -1,3 +1,9 @@
+166:
+Stable
+Iris Helper now supports powersave mode for Pandora FEAS.
+You MUST add all your games into the configuration file.
+Iris Helper now has a lower performance cost.
+
 164:
 *Experimental*
 Iris Helper now has a lower performance cost.
