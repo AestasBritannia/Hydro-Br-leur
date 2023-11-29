@@ -1,3 +1,6 @@
+168:
+Fixed an issue.
+
 166:
 Stable
 Iris Helper now supports powersave mode for Pandora FEAS.
