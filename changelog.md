@@ -1,3 +1,6 @@
+171:
+Updated database for Joyose.
+
 170:
 Modify the frame insertion (MEMC) parameter configuration of all default games in joyose.  
 Modify the default configuration file of Iris Helper to make it compatible with joyose's preset.
