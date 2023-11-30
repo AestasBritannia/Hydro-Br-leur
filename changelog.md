@@ -1,3 +1,9 @@
+174:
+Delete redundant code.
+Adapt to Yuni Kernel-231130.
+Fix some function failures.
+Synchronize mly's sound effect modifications.
+
 171:
 Updated database for Joyose.
 
