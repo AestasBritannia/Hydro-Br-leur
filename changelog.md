@@ -1,3 +1,7 @@
+181:
+Fixed all the issues that were previously identified.
+Update compatibility for Hyper OS.
+
 174:
 Delete redundant code.
 Adapt to Yuni Kernel-231130.
