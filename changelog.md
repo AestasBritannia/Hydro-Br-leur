@@ -1,3 +1,7 @@
+184:
+Allow Joyose properly functioning while Iris Helper isn't installed.
+Improved performance.
+
 181:
 Fixed all the issues that were previously identified.
 Update compatibility for Hyper OS.
