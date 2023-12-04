@@ -1,3 +1,7 @@
+186:
+*Stable*
+Fixed an issue.
+
 184:
 Allow Joyose properly functioning while Iris Helper isn't installed.
 Improved performance.
