@@ -1,3 +1,6 @@
+191:
+Improved performance.
+
 187:
 Use json instead of sql to reduce the difficulty of operation.
 Added configuration automatic backup function to facilitate module updates.
