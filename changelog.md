@@ -1,3 +1,7 @@
+212:
+Fundamentally reconstructed per-app config for more daily scenes.
+Fixed an issue.
+
 196:
 Provide a busybox for the devices which can't properly run iris_helper.sh.
 
