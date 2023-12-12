@@ -53,8 +53,10 @@ MIUI浏览器(MIUI Browser)<br>
 Citra 3DS Emulator<br>
 
 # Others:
-The module is compatible with A-SOUL Games Optimization.
+The module is compatible with A-SOUL Games Optimization and Scene 6/7.
 
-Supports 2712x1220 resolution point-to-point rendering in Genshin Impact. You need to enable the high-quality option in MIUI Game Turbo, and delete hardware_model_config.json from the module.
+Supports 2712x1220 resolution point-to-point rendering in Genshin Impact. You need to enable the high-quality option in MIUI Game Turbo.
+
+Use 864p resolution instead of 728p as original preset for Genshin Impact.
 
 If you have any comments or suggestions, you can contact 981916119@qq.com.
