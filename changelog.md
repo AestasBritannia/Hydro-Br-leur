@@ -1,3 +1,7 @@
+215:
+Supports 元梦之星.
+Adjust GPU DVFS configuration.
+
 212:
 Fundamentally reconstructed per-app config for more daily scenes.
 Fixed an issue.
