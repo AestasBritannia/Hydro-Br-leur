@@ -1,5 +1,5 @@
 # Hydro-BrÛleur
-A magisk module for Corot devices that adds some features contributed by Shadow3, Mly, M7recRAB, Ski, and Hamjin.
+  A magisk module for Corot devices that adds some features contributed by Shadow3, Mly, M7recRAB, Ski, and Hamjin.
 
 # Features:
   1. Optimizes different application scenarios to enhance user experience. It includes adjusting affinity, memory management, processor and graphics processor frequency policies, etc.
@@ -34,7 +34,8 @@ QQ<br>
 菠萝包轻小说<br>
 刺猬猫阅读<br>
 Microsoft Edge<br>
-MIUI浏览器(MIUI Browser)<br>
+浏览器(Browser)<br>
+系统桌面(Desktop)<br>
 高德地图<br>
 京东<br>
 闲鱼<br>
@@ -51,6 +52,7 @@ MIUI浏览器(MIUI Browser)<br>
 英雄联盟手游<br>
 金铲铲之战<br>
 Citra 3DS Emulator<br>
+元梦之星<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization and Scene 6/7.
