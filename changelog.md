@@ -1,3 +1,6 @@
+217:
+Newly-built per-app config based on fpsgo v3.
+
 215:
 Supports 元梦之星.
 Adjust GPU DVFS configuration.
