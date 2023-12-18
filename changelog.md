@@ -1,3 +1,6 @@
+225:
+Support Dimensity 8000/8100/8200/9000/9000+ devices.
+
 224:
 Fixed an issue that causing K70E use unsupported refresh rate.
 
