@@ -1,3 +1,8 @@
+219:
+Adjust per-app config for QQ, Wechat an Bilibili.
+Enable 40 to 120 frame insertion for 原神.
+Improve performance.
+
 217:
 Newly-built per-app config based on fpsgo v3.
 
