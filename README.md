@@ -1,22 +1,22 @@
 # Hydro-BrÛleur
-  A magisk module for Corot devices that adds some features contributed by Shadow3, Mly, M7recRAB, Ski, and Hamjin.
+  A magisk module for Corot and Duchamp devices that adds some features contributed by Shadow3, Mly, M7recRAB and Hamjin.
 
 # Features:
   1. Optimizes different application scenarios to enhance user experience. It includes adjusting affinity, memory management, processor and graphics processor frequency policies, etc.
   
   2. Optimizes the performance and power consumption of multiple game apps, achieving smoother graphics and lower battery drain.
   
-  3. Experimental sound optimization, customized for K60 Ultra/Mi 13T Series. Thanks to @Mly and @M7recRAB for their contributions.
+  3. Experimental sound optimization, customized for K60 Ultra/Mi 13T/K70E Series. Thanks to @Mly and @M7recRAB for their contributions.
   
   4. Optimizes vibration effect, thanks to @Mly’s original work.
   
-  5. Automatic brick rescue function, thanks to @Ski’s development.
+  5. Automatic brick rescue function, thanks to @Hamjin’s development.
   
   6. Removes the frequency limit of Yuni kernel, increases the software protection temperature of MediaTek for SoC, and unleashes stronger performance.
   
   7. Supports displaying real battery level, thanks to @Shadow3.
 
-  8. Supports Pixelworks X7 parameter configuration, Pandora FEAS parameter configuration, and MIUI frame lock configuration for any App.
+  8. Supports Pixelworks X7 parameter configuration, Pandora FEAS parameter configuration, and MIUI frame lock configuration for any App (Only for K60 Ultra).
 
 # Supported Apps:
 QQ<br>
