@@ -1,3 +1,6 @@
+223:
+Support Redmi K70E.
+
 219:
 Adjust per-app config for QQ, Wechat an Bilibili.
 Enable 40 to 120 frame insertion for 原神.
