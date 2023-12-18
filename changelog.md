@@ -1,3 +1,6 @@
+224:
+Fixed an issue that causing K70E use unsupported refresh rate.
+
 223:
 Support Redmi K70E.
 
