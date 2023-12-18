@@ -1,5 +1,5 @@
 # Hydro-BrÛleur
-  A magisk module for Corot and Duchamp devices that adds some features contributed by Shadow3, Mly, M7recRAB and Hamjin.
+  A magisk module for devices running on Dimensity flagship platforms. Providing some features contributed by Shadow3, Mly, M7recRAB and Hamjin.
 
 # Features:
   1. Optimizes different application scenarios to enhance user experience. It includes adjusting affinity, memory management, processor and graphics processor frequency policies, etc.
