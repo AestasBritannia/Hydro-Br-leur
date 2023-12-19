@@ -1,3 +1,6 @@
+230:
+Try to fix the issue that causing certain devices cannot properly run iris_helper.sh
+
 229:
 Fixed an issue that causing rubens devices' vibrance modification not properly functioning.
 
