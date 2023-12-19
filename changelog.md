@@ -1,3 +1,6 @@
+227:
+Fixed some errors.
+
 225:
 Support Dimensity 8000/8100/8200/9000/9000+ devices.
 
