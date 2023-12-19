@@ -1,3 +1,6 @@
+229:
+Fixed an issue that causing rubens devices' vibrance modification not properly functioning.
+
 227:
 Fixed some errors.
 
