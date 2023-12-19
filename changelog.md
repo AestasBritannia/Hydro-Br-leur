@@ -1,3 +1,7 @@
+232:
+Optimize per-app config for Weibo, QQ and Bilibili.
+Disallow installing when Magisk version is under 26403.
+
 230:
 Try to fix the issue that causing certain devices cannot properly run iris_helper.sh
 
