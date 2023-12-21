@@ -1,3 +1,8 @@
+247：
+Removed the mount --bind command and some corresponding functions to correct the problem of exceptions caused by Magisk mounting the odm partition on some devices.
+Removed Magisk version check in favor of Kernel SU.
+Added super-resolution, HDR parameter modification and only supports Kernel SU.
+
 242:
 Remove busybox to reduce module size.
 Trying to fix the problem that Magisk cannot execute the shell normally due to damage to some device environments.
