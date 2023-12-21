@@ -1,3 +1,12 @@
+242:
+Remove busybox to reduce module size.
+Trying to fix the problem that Magisk cannot execute the shell normally due to damage to some device environments.
+Modify the color styles in the MIUI game toolbox to correspond to default, EDR, one HDR scheme and another HDR scheme.
+Adjusted Genshin Impact's super resolution strategy to improve the look and feel.
+Fixed an issue that caused the brightness to be unable to be adjusted in the game when Dual MEMC was turned on.
+Modify the per-app configuration of multiple applications to reduce power consumption.
+Optimize the smoothness of the MIUI system desktop.
+
 234:
 Disallow installing when Magisk version is under 26403.
 
