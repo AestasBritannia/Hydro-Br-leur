@@ -1,3 +1,7 @@
+249:
+Add environment detection for Magisk to prevent any installation under abnormal Magisk.
+Adjust per-app config for better battery-life.
+
 247:
 Removed the mount --bind command and some corresponding functions to correct the problem of exceptions caused by Magisk mounting the odm partition on some devices.
 Removed Magisk version check in favor of Kernel SU.
