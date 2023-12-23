@@ -1,3 +1,7 @@
+251:
+Fixed some issue for Kernel SU.
+Adjust per-app config for better battery-life.
+
 249:
 Add environment detection for Magisk to prevent any installation under abnormal Magisk.
 Adjust per-app config for better battery-life.
