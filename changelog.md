@@ -1,3 +1,7 @@
+252:
+Adjust per-app config for certain apps.
+Adjust GPU DVFS margin.
+
 251:
 Fixed some issue for Kernel SU.
 Adjust per-app config for better battery-life.
