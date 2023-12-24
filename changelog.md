@@ -1,3 +1,6 @@
+255:
+Optimize detection logic to prevent more users from installing this module.
+
 254:
 Optimize detection logic to prevent some users from installing this module.
 
