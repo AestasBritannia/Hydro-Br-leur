@@ -1,5 +1,6 @@
 255:
 Optimize detection logic to prevent more users from installing this module.
+Adjust strategy for installation in order to prevent causing negative effects to abnormal devices.
 
 254:
 Optimize detection logic to prevent some users from installing this module.
