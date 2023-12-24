@@ -1,3 +1,6 @@
+254:
+Optimize detection logic to prevent some users from installing this module.
+
 252:
 Adjust per-app config for certain apps.
 Adjust GPU DVFS margin.
