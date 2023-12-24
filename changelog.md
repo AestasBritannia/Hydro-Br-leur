@@ -1,3 +1,6 @@
+257：
+Since Kernel SU cannot mount the odm partition correctly on Hyper OS, some modifications to the Iris X7 configuration are cancelled.
+
 255:
 Optimize detection logic to prevent more users from installing this module.
 Adjust strategy for installation in order to prevent causing negative effects to abnormal devices.
