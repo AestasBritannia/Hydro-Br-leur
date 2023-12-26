@@ -1,7 +1,7 @@
 262:
 Try to fix the issue that some D8100/9000 devices are banned from installation.
 
-257：
+257:
 Since Kernel SU cannot mount the odm partition correctly on Hyper OS, some modifications to the Iris X7 configuration are cancelled.
 
 255:
