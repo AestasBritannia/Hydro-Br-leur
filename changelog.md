@@ -1,3 +1,9 @@
+267:
+Use the new Genshin Impact high-resolution solution and UI interface of the K70/Xiaomi 14 series
+Fixed an issue where Performance Mode did not correctly overwrite Joyose configuration after boot.
+Optimize some configurations.
+Re-enable Dual MEMC (under super-resolution mode) for Genshin Impact.
+
 262:
 Try to fix the issue that some D8100/9000 devices are banned from installation.
 
