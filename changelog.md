@@ -1,3 +1,8 @@
+272:
+Support VRS and DRR (two techniques which can automatically worsening graphics quality to reduce power cost on Xiaomi Snapdragon devices).
+Support 猫和老鼠.
+Adjust per-app config.
+
 268:
 Use the new Genshin Impact high-resolution solution and UI interface of the K70/Xiaomi 14 series
 Fixed an issue where Performance Mode did not correctly overwrite Joyose configuration after boot.
