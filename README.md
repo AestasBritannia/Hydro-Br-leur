@@ -54,6 +54,7 @@ Microsoft Edge<br>
 Citra 3DS Emulator<br>
 元梦之星<br>
 雀魂麻将(Maj-soul)<br>
+猫和老鼠<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization and Scene 6/7.
