@@ -1,5 +1,5 @@
 279:
-Fixed the problem of per-app configuration not taking effect.
+Fixed the problem that old devices cannot run per-app config properly.
 Configure independent new per-app configurations for Dimensity 8100, 8200, and 9000 platform devices.
 Optimize the configuration of Dimensity 8200 platform.
 Optimize efficiency for some games.
@@ -7,6 +7,7 @@ Sound effects adjustments.
 Other modifications.
 
 272:
+Fixed the problem of per-app configuration not taking effect.
 Support VRS and DRR (two techniques which can automatically worsening graphics quality to reduce power cost on Xiaomi Snapdragon devices).
 Support 猫和老鼠.
 Adjust per-app config.
