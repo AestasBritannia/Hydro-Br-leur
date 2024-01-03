@@ -1,3 +1,9 @@
+284:
+Updated sound effects modifications.
+Modify the FEAS configuration of Girls Frontline 2.
+Supports accelerated animation playback when loading games such as Honor of Kings.
+Other modifications.
+
 279:
 Fixed the problem that old devices cannot run per-app config properly.
 Configure independent new per-app configurations for Dimensity 8100, 8200, and 9000 platform devices.
