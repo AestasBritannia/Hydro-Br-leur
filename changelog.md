@@ -1,3 +1,12 @@
+305:
+Modify FEAS policy.
+Re-enable audio support for Dimensity 8100/9000 devices.
+Fixed an issue where the Dimensity 9200 device could not turn off the sound effects correctly.
+Misappropriate the SDR and EDR configuration of a certain device to enhance the picture effect.
+Modify Genshin Impact’s super-resolution strategy.
+EDR is enabled by default for Genshin Impact.
+*Known issue: /odm/firmware cannot be modified after post-fs-data, so certain files won't be correctly applied.
+
 284:
 Updated sound effects modifications.
 Modify the FEAS configuration of Girls Frontline 2.
