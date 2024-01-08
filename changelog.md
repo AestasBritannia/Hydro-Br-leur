@@ -1,3 +1,8 @@
+312:
+Added some HDR presets.
+Rolled back some changes.
+Modify sound effects.
+
 305:
 Modify FEAS policy.
 Re-enable audio support for Dimensity 8100/9000 devices.
