@@ -1,3 +1,6 @@
+319:
+Fixed the issue that version code is incorrect.
+
 318:
 The new "super-resolution and super-painting engine" improves the look and feel while retaining the original content as much as possible. It currently supports Genshin Impact.
 Modified the frame insertion strategy of Honkai: Star Rail.
