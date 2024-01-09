@@ -1,3 +1,7 @@
+320:
+SRSP Engine now supports Honkai: Star Rail.
+New SR configuration for Call of Duty Mobile.
+
 319:
 Fixed the issue that version code is incorrect.
 
