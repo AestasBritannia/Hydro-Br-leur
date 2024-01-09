@@ -1,3 +1,10 @@
+318:
+The new "super-resolution and super-painting engine" improves the look and feel while retaining the original content as much as possible. It currently supports Genshin Impact.
+Modified the frame insertion strategy of Honkai: Star Rail.
+Modify the Genshin Impact resolution modification strategy for old Dimensity models.
+Modify the setting method of FEAS target frame rate.
+Fixed an issue where Vulkan could not be properly disabled for Genshin Impact.
+
 312:
 Added some HDR presets.
 Rolled back some changes.
