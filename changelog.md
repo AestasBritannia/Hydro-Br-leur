@@ -1,3 +1,9 @@
+331:
+Rewrite K60U sound effects, support Bluetooth, USB pass-through, adjust speaker performance, and adjust speaker equalizer.
+Adjusted super-resolution strategies for games such as Genshin Impact, 深空之眼, and Girls’ Frontline 2.
+Adjust Genshin Impact’s HDR strategy.
+Adjust the frame insertion strategy of 深空之眼.
+
 320:
 SRSP Engine now supports Honkai: Star Rail.
 New SR configuration for Call of Duty Mobile.
