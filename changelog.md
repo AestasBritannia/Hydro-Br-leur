@@ -1,3 +1,9 @@
+340:
+Small adjustments.
+Changed MEMC's target frame rate consistently to 144 to provide a better graphics experience.
+Sound effects adjustments.
+Optimize the Joyose configuration of the previous generation Dimensity platform.
+
 331:
 Rewrite K60U sound effects, support Bluetooth, USB pass-through, adjust speaker performance, and adjust speaker equalizer.
 Integrate mly's sound effect for Dimensity 8100/8200/9000 into the module.
