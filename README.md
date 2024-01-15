@@ -10,7 +10,7 @@
   
   4. Optimizes vibration effect, thanks to @Mly’s original work.
   
-  5. Automatic brick rescue function, thanks to @Hamjin’s development.
+  5. Multiple small optimizations.
   
   6. Removes the frequency limit of Yuni kernel, increases the software protection temperature of MediaTek for SoC, and unleashes stronger performance.
   
@@ -45,6 +45,7 @@ Reddit<br>
 Twitter<br>
 王者荣耀<br>
 王者荣耀体验服<br>
+Arena of Valor<br>
 原神(Genshin Impact)<br>
 崩坏：星穹铁道(Honkai: Star Rail)<br>
 崩坏3(Honkai 3rd)<br>
@@ -61,6 +62,7 @@ Citra 3DS Emulator<br>
 雀魂麻将(Maj-soul)<br>
 猫和老鼠<br>
 深空之眼<br>
+Grand Theft Auto: San Andreas Definitive Edition(Netflix)<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization.
