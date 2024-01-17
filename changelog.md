@@ -1,3 +1,10 @@
+346:
+Enable Rhythm Eye Protection for Corot devices.
+Enable beast mode UI for Corot devices.
+Adjust sound effects.
+Added instructions in French and English.
+Added "idle refresh rate policy adjustment" function.
+
 340:
 Small adjustments.
 Changed MEMC's target frame rate consistently to 144 to provide a better graphics experience.
