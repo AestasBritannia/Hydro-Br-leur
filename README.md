@@ -51,7 +51,7 @@ Arena of Valor<br>
 崩坏3(Honkai 3rd)<br>
 尘白禁区（官服）<br>
 逆水寒<br>
-使命召唤手游<br>
+使命召唤手游（国服、东南亚服）<br>
 和平精英<br>
 暗区突围<br>
 英雄联盟手游<br>
@@ -63,6 +63,11 @@ Citra 3DS Emulator<br>
 猫和老鼠<br>
 深空之眼<br>
 Grand Theft Auto: San Andreas Definitive Edition(Netflix)<br>
+战双帕弥什<br>
+皇室战争<br>
+Minecraft<br>
+少女前线2：追放<br>
+元梦之星<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization.
