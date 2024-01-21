@@ -1,3 +1,16 @@
+361:
+Modify the super-resolution strategy of 王者荣耀.
+Support Clash of Clans: Clash Royale.
+Support 战双帕弥什.
+Supports 王者荣耀 frame insertion from 120 fps to 144 fps.
+Supports Call of Duty: Mobile 90 fps insert to 144 fps.
+Call back the intelligent frame insertion 144 frames to the fixed magnification frame interpolation.
+Updated sound effects.
+Call back the idle refresh rate brightness threshold to a more reasonable range.
+Optimize the installation logic and stop releasing the current kernel configuration when a kernel update is detected.
+Performance optimization.
+Other modifications.
+
 346:
 Enable Rhythm Eye Protection for Corot devices.
 Enable beast mode UI for Corot devices.
