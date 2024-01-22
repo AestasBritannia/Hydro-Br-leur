@@ -1,3 +1,10 @@
+367:
+Fixed an issue where "Disable Idle Refresh Rate Reduction Policy" functioned abnormally.
+Modify Genshin Impact’s super-resolution strategy.
+Sound effects adjustments.
+Completely remove the automatic self-rescue function.
+Other optimizations.
+
 361:
 Modify the super-resolution strategy of 王者荣耀.
 Support Clash of Clans: Clash Royale.
