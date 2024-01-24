@@ -1,29 +1,102 @@
-#!/data/adb/magisk/busybox sh
 android_version=$(getprop ro.system.build.version.release)
 soc=$(getprop ro.hardware)
 model=$(getprop ro.product.model)
 device=$(getprop ro.product.vendor.device)
+marketname=$(getprop ro.product.marketname)
 manufacturer=$(getprop ro.product.system.manufacturer)
 kernel_version=$(uname -r)
 settings="$MODPATH"/settings.txt
 settings_old=/data/adb/modules/ab_optimizer/settings.txt
 HYPROP="$MODPATH"/module.prop
-DESC_ZH="适用于 $device 设备的定制优化。"
-DESC_EN="A magisk module for $device devices."
-DESC_FR="Un module Magisk pour les appareils $device\."
+DESC_ZH="适用于 $marketname 的定制优化。"
+DESC_EN="A magisk module for $marketname\."
+DESC_FR="Un module Magisk pour les appareils $marketname\."
 
 print_line(){
     ui_print "——————————"
 }
 
+hydro_kernel_version(){
+    if [[ $kernel_version == *"Yuni"* ]]; then
+        h_yuni_kernel=1
+    else
+        if [[ $kernel_version == *"AngelBeats"* ]]; then
+            h_yuni_kernel=2
+        else
+            if [[ $kernel_version == *"Pandora"* ]]; then
+                h_yuni_kernel=3
+            else
+                h_yuni_kernel=0
+            fi
+        fi
+    fi
+    if [[ $h_yuni_kernel -gt 0 ]]; then
+        is_pandora=1
+    else
+        is_pandora=0
+    fi
+}
+
+hydro_pandora_beta(){
+    hydro_kernel_version
+    case $kernel_version in
+    ????????*)
+        last_eight=${kernel_version#${kernel_version%????????}}
+        ;;
+    *)
+        last_eight=$kernel_version
+        ;;
+    esac
+    if [ $is_pandora = 1 ]; then
+        if [[ "$(expr index "$last_eight" '[a-z]')" -eq 0 ]]; then
+            pandora_is_beta=1
+            pandora_beta_version=${kernel_version: -8}
+        else
+            pandora_is_beta=0
+            pandora_open_version=${kernel_version: -1}
+        fi
+    fi
+    
+    if [[ $pandora_beta_version -ge 20240121 ]]; then
+        cloud_mode=2
+    else
+        if [[ $pandora_open_version -ge 2 ]]; then
+            cloud_mode=2
+        else
+            cloud_mode=1
+        fi
+    fi
+}
+
+hydro_cloud_process_new(){
+    hydro_pandora_beta
+    if [[ "$cloud_mode" = "2" ]]; then
+        rm -f "$MODPATH"/joy_config/common_config.json
+        mv "$MODPATH"/joy_config/common_config_new.json "$MODPATH"/joy_config/common_config.json
+        rm -f "$MODPATH"/platform_config/a/booster_config_mtk.json
+        mv "$MODPATH"/platform_config/a/joy_config/booster_config_mtk_new.json "$MODPATH"/platform_config/a/joy_config/booster_config_mtk.json
+        rm -f "$MODPATH"/platform_config/b/booster_config_mtk.json
+        mv "$MODPATH"/platform_config/b/joy_config/booster_config_mtk_new.json "$MODPATH"/platform_config/b/joy_config/booster_config_mtk.json
+    else
+        rm -f "$MODPATH"/joy_config/common_config_new.json
+        rm -f "$MODPATH"/platform_config/a/joy_config/booster_config_mtk_new.json
+        rm -f "$MODPATH"/platform_config/b/joy_config/booster_config_mtk_new.json
+    fi
+}
+
 hydro_official_kernel(){
     sed -i 's/perfmgr_mtk/mtk_fpsgo/g' "$MODPATH"/joy_config/booster_config_mtk.json
+    sed -i 's/target_fps_48/t_fps_49/g' "$MODPATH"/joy_config/booster_config_mtk.json
+    sed -i 's/target_fps_60/t_fps_61/g' "$MODPATH"/joy_config/booster_config_mtk.json
+    sed -i 's/target_fps_90/t_fps_91/g' "$MODPATH"/joy_config/booster_config_mtk.json
+    sed -i 's/target_fps_120/t_fps_121/g' "$MODPATH"/joy_config/booster_config_mtk.json
     sed -i 's/fixed_target_fps/f_t_fps/g' "$MODPATH"/joy_config/booster_config_mtk.json
     sed -i 's/perfmgr_mtk\/parameters\/ddrfreq_remap_table/mtk_fpsgo\/parameters\/ddrfreq_remap_table/g' "$MODPATH"/joy_config/booster_config_mtk.json
 }
 
 hydro_yuni_kernel(){
-    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|core_ctl|gpufreqv2)/#&/g' /data/adb/modules/yuni_kernel/service.sh
+    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules/yuni_kernel/service.sh
+    sed -i -r '/idle_timer|refresh_rate|content_detection|enable_frame_rate/d' /data/adb/modules/yuni_kernel/system.prop
     sed -i '/# GKI modification/,/# GKI modification fin./d' "$MODPATH"/functions.sh
     cp "$MODPATH"/joy_config/booster_config_mtk.json /data/adb/modules/yuni_kernel/config
     cp "$MODPATH"/joy_config/common_config.json /data/adb/modules/yuni_kernel/config
@@ -32,23 +105,27 @@ hydro_yuni_kernel(){
 
 hydro_ab_kernel(){
     sed -i '/# GKI modification/,/# GKI modification fin./d' "$MODPATH"/functions.sh
+    sed -i -r '/idle_timer|refresh_rate|content_detection|enable_frame_rate/d' /data/adb/modules/angelbeats_kernel/system.prop
     sed -i 's/perfmgr_mtk/mtk_fpsgo/g' "$MODPATH"/joy_config/booster_config_mtk.json
     sed -i 's/fixed_target_fps/f_t_fps/g' "$MODPATH"/joy_config/booster_config_mtk.json
     sed -i 's/perfmgr_mtk\/parameters\/ddrfreq_remap_table/mtk_fpsgo\/parameters\/ddrfreq_remap_table/g' "$MODPATH"/joy_config/booster_config_mtk.json
-    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|core_ctl|gpufreqv2)/#&/g' /data/adb/modules/angelbeats_kernel/service.sh
+    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules/angelbeats_kernel/service.sh
     cp "$MODPATH"/joy_config/booster_config_mtk.json /data/adb/modules/angelbeats_kernel/config
     cp "$MODPATH"/joy_config/common_config.json /data/adb/modules/angelbeats_kernel/config
 }
 
 hydro_pandora_kernel(){
     sed -i '/# GKI modification/,/# GKI modification fin./d' "$MODPATH"/functions.sh
+    sed -i -r '/idle_timer|refresh_rate|content_detection|enable_frame_rate/d' /data/adb/modules/pandora_kernel/system.prop
     cp "$MODPATH"/joy_config/booster_config_mtk.json /data/adb/modules/pandora_kernel/config
     cp "$MODPATH"/joy_config/common_config.json /data/adb/modules/pandora_kernel/config
     cp "$MODPATH"/system/vendor/etc/powercontable.xml /data/adb/modules/pandora_kernel/system/vendor/etc/powercontable.xml
 }
 
 hydro_yuni_update(){
-    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|core_ctl|gpufreqv2)/#&/g' /data/adb/modules_update/yuni_kernel/service.sh
+    hydro_update_flag=1
+    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules_update/yuni_kernel/service.sh
+    sed -i -r '/idle_timer|refresh_rate|content_detection|enable_frame_rate/d' /data/adb/modules_update/yuni_kernel/system.prop
     sed -i '/# GKI modification/,/# GKI modification fin./d' "$MODPATH"/functions.sh
     cp "$MODPATH"/joy_config/booster_config_mtk.json /data/adb/modules_update/yuni_kernel/config
     cp "$MODPATH"/joy_config/common_config.json /data/adb/modules_update/yuni_kernel/config
@@ -56,21 +133,24 @@ hydro_yuni_update(){
 }
 
 hydro_ab_update(){
+    hydro_update_flag=1
     sed -i '/# GKI modification/,/# GKI modification fin./d' "$MODPATH"/functions.sh
+    sed -i -r '/idle_timer|refresh_rate|content_detection|enable_frame_rate/d' /data/adb/modules_update/angelbeats_kernel/system.prop
     sed -i 's/perfmgr_mtk/mtk_fpsgo/g' "$MODPATH"/joy_config/booster_config_mtk.json
     sed -i 's/fixed_target_fps/f_t_fps/g' "$MODPATH"/joy_config/booster_config_mtk.json
     sed -i 's/perfmgr_mtk\/parameters\/ddrfreq_remap_table/mtk_fpsgo\/parameters\/ddrfreq_remap_table/g' "$MODPATH"/joy_config/booster_config_mtk.json
-    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|core_ctl|gpufreqv2)/#&/g' /data/adb/modules_update/angelbeats_kernel/service.sh
+    sed -i -r 's/^[^#].*(cpufreq_debug|custom_upbound_gpu_freq|dcs_mode|gpufreqv2)/#&/g' /data/adb/modules_update/angelbeats_kernel/service.sh
     cp "$MODPATH"/joy_config/booster_config_mtk.json /data/adb/modules_update/angelbeats_kernel/config
     cp "$MODPATH"/joy_config/common_config.json /data/adb/modules_update/angelbeats_kernel/config
 }
 
 hydro_pandora_update(){
+    hydro_update_flag=1
     sed -i '/# GKI modification/,/# GKI modification fin./d' "$MODPATH"/functions.sh
+    sed -i -r '/idle_timer|refresh_rate|content_detection|enable_frame_rate/d' /data/adb/modules_update/pandora_kernel/system.prop
     cp "$MODPATH"/joy_config/booster_config_mtk.json /data/adb/modules_update/pandora_kernel/config
     cp "$MODPATH"/joy_config/common_config.json /data/adb/modules_update/pandora_kernel/config
     cp "$MODPATH"/system/vendor/etc/powercontable.xml /data/adb/modules_update/pandora_kernel/system/vendor/etc/powercontable.xml
-    cp "$MODPATH"/platform_config/b/lmkd /data/adb/modules_update/pandora_kernel/system/bin
 }
 
 hydro_asopt_compatibility(){
@@ -81,6 +161,10 @@ hydro_asopt_compatibility(){
 
 hydro_enable_soundfx(){
     cp -r "$TMPDIR"/etc "$MODPATH"/system/vendor
+}
+
+hydro_enable_soundfx_alt(){
+    cp -r "$TMPDIR"/alternative/etc "$MODPATH"/system/vendor
 }
 
 hydro_disable_soundfx(){
@@ -128,6 +212,20 @@ hydro_power_performance(){
     sed -i '/# Balanced mode config/,/# Balanced mode config fin./d' "$MODPATH"/functions.sh
 }
 
+hydro_refresh_aggressive(){
+    sed -i '/# Advanced sf drr/,/# Advanced sf drr fin./d' "$MODPATH"/system.prop
+}
+
+hydro_refresh_default(){
+    sed -i '/# Idle control/,/# Idle control fin./d' "$MODPATH"/system.prop
+    sed -i '/# Advanced sf drr/,/# Advanced sf drr fin./d' "$MODPATH"/system.prop
+}
+
+hydro_refresh_disable(){
+    sed -i -r 's/debug.sf.set_idle_timer_ms=400/debug.sf.set_idle_timer_ms=0/g' "$MODPATH"/system.prop
+    sed -i '/ro.vendor.disable_idle_fps.threshold/d' "$MODPATH"/system.prop
+}
+
 hydro_iris_cfg_update(){
     if [ -f /data/adb/modules/ab_optimizer/iris/iriscfgcustomize.conf ]; then
         cp /data/adb/modules/ab_optimizer/iris/iriscfgcustomize.conf "$MODPATH"/iris/iriscfgcustomize.conf
@@ -138,24 +236,11 @@ hydro_hyper_os(){
     hydro_disable_vibration
 }
 
-hydro_kernel_version(){
-    if [[ $kernel_version == *"Yuni"* ]]; then
-        h_yuni_kernel=1
-    else
-        if [[ $kernel_version == *"AngelBeats"* ]]; then
-            h_yuni_kernel=2
-        else
-            if [[ $kernel_version == *"Pandora"* ]]; then
-                h_yuni_kernel=3
-            else
-                h_yuni_kernel=0
-            fi
-        fi
-    fi
-}
-
 hydro_6985(){
     cp -r "$MODPATH"/platform_config/a/etc "$TMPDIR"
+    cp -r "$MODPATH"/platform_config/a/alternative "$TMPDIR"
+    mkdir -p "$MODPATH"/system/product/etc/
+    cp -r "$MODPATH"/platform_config/a/corot/device_features "$MODPATH"/system/product/etc
     cp -r "$MODPATH"/platform_config/a/power_config/etc "$MODPATH"/system/vendor
     cp "$MODPATH"/platform_config/a/joy_config/booster_config_mtk.json "$MODPATH"/joy_config
 }
@@ -166,6 +251,8 @@ hydro_not_6985(){
 
 hydro_6897(){
     cp -r "$MODPATH"/platform_config/a/etc "$TMPDIR"
+    rm -f "$TMPDIR"/etc/dolby/dax_default.xml
+    cp -r "$MODPATH"/platform_config/b/etc/dolby "$TMPDIR"/etc
     sed -i 's/PERF_RES_CPUFREQ_MAX_CLUSTER/PERF_RES_CPUFREQ_MAX_HL_CLUSTER/g' "$MODPATH"/platform_config/a/power_config/balanced/power_app_cfg.xml
     rm -f "$MODPATH"/platform_config/a/power_config/etc/powercontable.xml
     cp "$MODPATH"/platform_config/a/power_config/etc "$MODPATH"/system/vendor
@@ -269,6 +356,7 @@ hydro_soc_detect(){
 }
 
 hydro_pre_install(){
+    hydro_cloud_process_new
     hydro_iris_cfg_update
     hydro_soc_detect
     hydro_kernel_version
@@ -296,22 +384,25 @@ hydro_injection(){
             hydro_yuni_update
             ui_print "检测到 Yuni 内核附加模块更新，注入中"
         fi
-        if [ "$h_yuni_kernel" = "3" ]; then
-            hydro_pandora_kernel
-            ui_print "检测到 Pandora 内核，注入中"
+        if [ "$hydro_update_flag" != "1" ]; then
+            if [ "$h_yuni_kernel" = "3" ]; then
+                hydro_pandora_kernel
+                ui_print "检测到 Pandora 内核，注入中"
+            fi
+            if [ "$h_yuni_kernel" = "2" ]; then
+                hydro_ab_kernel
+                ui_print "检测到 AB 内核，注入中"
+            fi
+            if [ "$h_yuni_kernel" = "1" ]; then
+                hydro_yuni_kernel
+                ui_print "检测到 Yuni 内核，注入中"
+            fi
+            if [ "$h_yuni_kernel" = "0" ]; then
+                hydro_official_kernel
+                ui_print "检测到官方内核，注入中"
+                ui_print "推荐使用 Pandora 内核，QQ 频道号 36ul8o5au2"
+            fi
         fi
-        if [ "$h_yuni_kernel" = "2" ]; then
-            hydro_ab_kernel
-            ui_print "检测到 AB 内核，注入中"
-        fi
-        if [ "$h_yuni_kernel" = "1" ]; then
-            hydro_yuni_kernel
-            ui_print "检测到 Yuni 内核，注入中"
-        fi
-        if [ "$h_yuni_kernel" = "0" ]; then
-            hydro_official_kernel
-            ui_print "检测到官方内核，注入中"
-        fi        
         print_line
         ;;
     en)
@@ -327,21 +418,23 @@ hydro_injection(){
             hydro_yuni_update
             ui_print "Yuni Kernel update detected, injecting"
         fi
-        if [ "$h_yuni_kernel" = "3" ]; then
-            hydro_pandora_kernel
-            ui_print "Pandora Kernel detected, injecting"
-        fi
-        if [ "$h_yuni_kernel" = "2" ]; then
-            hydro_ab_kernel
-            ui_print "AngelBeats Kernel detected, injecting"
-        fi
-        if [ "$h_yuni_kernel" = "1" ]; then
-            hydro_yuni_kernel
-            ui_print "Yuni Kernel detected, injecting"
-        fi
-        if [ "$h_yuni_kernel" = "0" ]; then
-            hydro_official_kernel
-            ui_print "Official Kernel detected, injecting"
+        if [ "$hydro_update_flag" != "1" ]; then
+            if [ "$h_yuni_kernel" = "3" ]; then
+                hydro_pandora_kernel
+                ui_print "Pandora Kernel detected, injecting"
+            fi
+            if [ "$h_yuni_kernel" = "2" ]; then
+                hydro_ab_kernel
+                ui_print "AngelBeats Kernel detected, injecting"
+            fi
+            if [ "$h_yuni_kernel" = "1" ]; then
+                hydro_yuni_kernel
+                ui_print "Yuni Kernel detected, injecting"
+            fi
+            if [ "$h_yuni_kernel" = "0" ]; then
+                hydro_official_kernel
+                ui_print "Official Kernel detected, injecting"
+            fi
         fi
         print_line
         ;;
@@ -358,21 +451,23 @@ hydro_injection(){
             hydro_yuni_update
             ui_print "Mise à jour du kernel détectée, injection en cours"
         fi
-        if [ "$h_yuni_kernel" = "3" ]; then
-            hydro_ab_kernel
-            ui_print "Pandora Kernel détecté, injection en cours"
-        fi
-        if [ "$h_yuni_kernel" = "2" ]; then
-            hydro_ab_kernel
-            ui_print "AngelBeats Kernel détecté, injection en cours"
-        fi
-        if [ "$h_yuni_kernel" = "1" ]; then
-            hydro_yuni_kernel
-            ui_print "Yuni Kernel détecté, injection en cours"
-        fi
-        if [ "$h_yuni_kernel" = "0" ]; then
-            hydro_official_kernel
-            ui_print "Kernel officiel détecté, injection en cours"
+        if [ "$hydro_update_flag" != "1" ]; then
+            if [ "$h_yuni_kernel" = "3" ]; then
+                hydro_ab_kernel
+                ui_print "Pandora Kernel détecté, injection en cours"
+            fi
+            if [ "$h_yuni_kernel" = "2" ]; then
+                hydro_ab_kernel
+                ui_print "AngelBeats Kernel détecté, injection en cours"
+            fi
+            if [ "$h_yuni_kernel" = "1" ]; then
+                hydro_yuni_kernel
+                ui_print "Yuni Kernel détecté, injection en cours"
+            fi
+            if [ "$h_yuni_kernel" = "0" ]; then
+                hydro_official_kernel
+                ui_print "Kernel officiel détecté, injection en cours"
+            fi
         fi
         print_line
         ;;
@@ -391,6 +486,9 @@ hydro_settings_backup(){
        echo "5:$key_click_5"
        echo "6:$key_click_6"
        echo "7:$key_click_7"
+       echo "8:$key_click_8"
+       echo "9:$key_click_9"
+       echo "10:$key_click_10"
        echo "}"
     } >> $settings
 }
@@ -433,6 +531,18 @@ hydro_read_settings(){
         7:*)
            param=${lineP#7:}
            key_click_7=$param
+           ;;
+        8:*)
+           param=${lineP#8:}
+           key_click_8=$param
+           ;;
+        9:*)
+           param=${lineP#9:}
+           key_click_9=$param
+           ;;
+        10:*)
+           param=${lineP#10:}
+           key_click_10=$param
            ;;
         "}")
            break
@@ -523,6 +633,7 @@ hydro_language_zh(){
         ui_print "未受支持的设备"
         abort
     else
+        hydro_pre_install
         print_line
         ui_print "欢迎来到 Hydro Brûleur！"
         ui_print "本模块为实验性模块"
@@ -559,10 +670,10 @@ hydro_language_zh(){
             hydro_disable_soundfx
         else
             print_line
-            if [ "$soc" != "mt6985" ~a "$soc" != "mt6897" ]; then
-                ui_print "是否启用来自 mly 和 RAY 的音效修改？"
+            if [ "$soc" != "mt6985" ]; then
+                ui_print "是否启用来自 Mly 和 Ray 的音效修改？"
             else
-                ui_print "是否启用来自 mly, RAY 和 AB 的音效修改？"
+                ui_print "是否启用音效修改？"
             fi
             ui_print "音量键 + : 启用音效修改"
             ui_print "音量键 - : 禁用音效修改"
@@ -570,17 +681,48 @@ hydro_language_zh(){
                 key_click_2=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
                 sleep 0.2
             done
-            case $key_click_2 in
-            KEY_VOLUMEUP)
-                ui_print "--已安装音效修改"
-                ui_print "--你需要手动安装模块压缩包内的 MusicFX.apk 以确保音效正常工作！"
-                hydro_enable_soundfx
-                ;;
-            *)
-                ui_print "--已关闭音效修改"
-                hydro_disable_soundfx
-                ;;
-            esac
+            if [ "$soc" = "mt6985" ]; then
+                case $key_click_2 in
+                KEY_VOLUMEUP)
+                    ui_print "现在，请选择你所需要的音效"
+                    ui_print "音量键 + : 启用来自 素菜 调整的音效修改，包括耳机EQ等，听感更舒适"
+                    ui_print "音量键 - : 启用来自 AB 调整的音效修改，仅包含扬声器EQ，听感自己去试！"
+                    while [ "$key_click_8" = "" ]; do
+                        key_click_8=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+                        sleep 0.2
+                    done
+                    case $key_click_8 in
+                        KEY_VOLUMEUP)
+                            ui_print "--已安装 素菜 的音效修改"
+                            hydro_enable_soundfx_alt
+                            ;;
+                        *)
+                            ui_print "--已安装 AB 的音效修改"
+                            hydro_enable_soundfx
+                            ;;
+                        esac
+                    ui_print "--已安装音效修改"
+                    ui_print "--Dax 以外的部分来自于 Mly 和 Ray"
+                    ui_print "--你需要手动安装模块压缩包内的 MusicFX.apk 以确保音效正常工作！"
+                    ;;
+                *)
+                    ui_print "--已关闭音效修改"
+                    hydro_disable_soundfx
+                    ;;
+                esac
+            else
+                case $key_click_2 in
+                KEY_VOLUMEUP)
+                    ui_print "--已安装音效修改"
+                    ui_print "--你需要手动安装模块压缩包内的 MusicFX.apk 以确保音效正常工作！"
+                    hydro_enable_soundfx
+                    ;;
+                *)
+                    ui_print "--已关闭音效修改"
+                    hydro_disable_soundfx
+                    ;;
+                esac
+            fi
             sleep 0.3
         fi
         print_line
@@ -645,6 +787,7 @@ hydro_language_zh(){
         ui_print "启用全局均衡模式还是性能模式?"
         ui_print "本选项对性能的影响不大, 建议选择均衡模式"
         ui_print "性能模式会提供更高的频率和核心温度上限"
+        ui_print "本功能会被其他用户态调度覆盖，不用担心冲突问题"
         ui_print "音量键 + : 均衡模式"
         ui_print "音量键 - : 性能模式"
         while [ "$key_click_6" = "" ]; do
@@ -666,12 +809,51 @@ hydro_language_zh(){
             iris_install_zh
         fi
         print_line
+        ui_print "是否启用更激进的/保守的闲置刷新率策略？"
+        ui_print "这不一定能改变多少功耗，但会对频闪表现产生影响"
+        ui_print "启用修改后，需要清除电量和性能的数据以使小米刷新率管理正常工作"
+        ui_print "音量键 + : 开启修改后的闲置刷新率策略"
+        ui_print "音量键 - : 采用官方默认策略"
+        while [ "$key_click_9" = "" ]; do
+            key_click_9=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+            sleep 0.2
+        done
+        case $key_click_9 in
+        KEY_VOLUMEUP)
+            ui_print "--请选择是采用激进的闲置刷新率策略，还是关闭闲置刷新率策略"
+            ui_print "--激进的策略有助于节省功耗，关闭策略有助于降低频闪风险"
+            ui_print "音量键 + : 开启激进的的闲置刷新率策略"
+            ui_print "音量键 - : 禁用闲置刷新率策略"
+            while [ "$key_click_10" = "" ]; do
+                key_click_10=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+            sleep 0.2
+            done
+            case $key_click_10 in
+            KEY_VOLUMEUP)
+                ui_print "--已启用激进的闲置刷新率策略"
+                hydro_refresh_aggressive
+                ;;
+            *)
+                ui_print "--已禁用闲置刷新率策略"
+                hydro_refresh_disable
+                ;;
+            esac
+            ;;
+        *)
+            ui_print "--已关闭闲置刷新率修改"
+            hydro_refresh_default
+            ;;
+        esac
+        sleep 0.3
+        print_line
         hydro_settings_backup
         hydro_injection
         ui_print "安装完成"
         sed -i "s/^description=.*$/description=$DESC_ZH/" "$HYPROP"
         rm -f "$MODPATH"/iris/iris_helper_user_guide_en.md
         rm -f "$MODPATH"/iris/iris_helper_user_guide_fr.md
+        rm -f "$MODPATH"/README.md
+        rm -f "$MODPATH"/Lis-moi.md
         sleep 0.2
         ui_print "请确保你已经知晓上述注意事项"
         ui_print "模块目录内含有更多的注意事项以供查阅"
@@ -691,6 +873,7 @@ hydro_language_en(){
         ui_print "Unsupported device"
         abort
     else
+        hydro_pre_install
         print_line
         ui_print "The module is experimental"
         ui_print "Only supports Dimensity 8000/9000 series"
@@ -724,23 +907,54 @@ hydro_language_en(){
             hydro_disable_soundfx
         else
             print_line
+            ui_print "Choose whether to enable sound effects modification"
             ui_print "Volume + : Enable sound optimization"
             ui_print "Volume - : Disable sound optimization"
             while [ "$key_click_2" = "" ]; do
                 key_click_2=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
                 sleep 0.2
             done
-            case $key_click_2 in
-            KEY_VOLUMEUP)
-                ui_print "--Sound optimization installed"
-                ui_print "--You need to manually install MusicFX.apk in the module's zip file to ensure that the sound effect works properly! "
-                hydro_enable_soundfx
-                ;;
-            *)
-                ui_print "--Sound optimization disabled"
-                hydro_disable_soundfx
-                ;;
-            esac
+            if [ "$soc" = "mt6985" ]; then
+                case $key_click_2 in
+                KEY_VOLUMEUP)
+                    ui_print "Now, choose the EQ preset you prefer"
+                    ui_print "Volume + : Enable dax file from 素菜，including EQ for earphones"
+                    ui_print "Volume - : Enable dax file from AB ，only include EQ for speakers"
+                    while [ "$key_click_8" = "" ]; do
+                        key_click_8=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+                        sleep 0.2
+                    done
+                    case $key_click_8 in
+                        KEY_VOLUMEUP)
+                            ui_print "--EQ from 素菜 installed"
+                            hydro_enable_soundfx_alt
+                            ;;
+                        *)
+                            ui_print "--EQ from AB installed"
+                            hydro_enable_soundfx
+                            ;;
+                    esac
+                    ui_print "--Sound effects enabled"
+                    ui_print "--You need to manually install MusicFX.apk in the module's zip package to ensure that the sound effect works properly!"
+                    ;;
+                *)
+                    ui_print "--Sound effects disabled"
+                    hydro_disable_soundfx
+                    ;;
+                esac
+            else
+                case $key_click_2 in
+                KEY_VOLUMEUP)
+                    ui_print "--Sound effects enabled"
+                    ui_print "--You need to manually install MusicFX.apk in the module's zip package to ensure that the sound effect works properly!"
+                    hydro_enable_soundfx
+                    ;;
+                *)
+                    ui_print "--Sound effects disabled"
+                    hydro_disable_soundfx
+                    ;;
+                esac
+            fi
             sleep 0.3
         fi
         print_line
@@ -822,12 +1036,50 @@ hydro_language_en(){
             iris_install_en
         fi
         print_line
+        ui_print "Choose whether to enable a more aggressive/conservative idle refresh rate policy"
+        ui_print "This won't necessarily change the power consumption, but it will have an impact on the flicker performance"
+        ui_print "After enabling the modification, the data on power and performance need to be cleared for Xiaomi refresh rate management to work properly"
+        ui_print "Volume +: Enable the modified idle refresh rate policy"
+        ui_print "Volume -: Use the official default strategy"
+        while [ "$key_click_9" = "" ]; do
+            key_click_9=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+            sleep 0.2
+        done
+        case $key_click_9 in
+        KEY_VOLUMEUP)
+            ui_print "--Please choose whether to use an aggressive idle refresh rate policy or turn off the idle refresh rate policy"
+            ui_print "--Aggressive strategy helps save power consumption, shutdown strategy helps reduce flicker risk"
+            ui_print "Volume +: Enable aggressive idle refresh rate strategy"
+            ui_print "Volume - : Disable idle refresh rate policy"
+            while [ "$key_click_10" = "" ]; do
+                key_click_10=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+            sleep 0.2
+            done
+            case $key_click_10 in
+            KEY_VOLUMEUP)
+                ui_print "--Aggressive idle refresh rate strategy enabled"
+                hydro_refresh_aggressive
+                ;;
+            *)
+                ui_print "--Idle refresh rate policy disabled"
+                hydro_refresh_disable
+                ;;
+            esac
+            ;;
+        *)
+            ui_print "--Idle refresh rate modification disabled"
+            hydro_refresh_default
+            ;;
+        esac
+        print_line
         hydro_settings_backup
         hydro_injection
         ui_print "Installation completed"
         sed -i "s/^description=.*$/description=$DESC_EN/" "$HYPROP"
         rm -f "$MODPATH"/iris/iris_helper_user_guide_zh.md
         rm -f "$MODPATH"/iris/iris_helper_user_guide_fr.md
+        rm -f "$MODPATH"/请读我.md
+        rm -f "$MODPATH"/Lis-moi.md
         sleep 0.2
         ui_print "Please ensure that you have been aware of the above precautions"
         ui_print "Reinstall the module after a kernel update"
@@ -846,6 +1098,7 @@ hydro_language_fr(){
         ui_print "Périphérique non pris en charge"
         abort
     else
+        hydro_pre_install
         print_line
         ui_print "Le module est expérimental"
         ui_print "Peut causer des problèmes ou des bugs"
@@ -884,18 +1137,48 @@ hydro_language_fr(){
                 key_click_2=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
                 sleep 0.2
             done
-            case $key_click_2 in
-            KEY_VOLUMEUP)
-                ui_print "--Optimisation du son installée"
-                ui_print "--Vous devez installer musicfx.apk manuellement dans le fichier zip du module pour vous assurer que les effets sonores fonctionnent correctement! "
-                hydro_enable_soundfx
-                ;;
-            *)
-                ui_print "--Optimisation du son désactivée"
-                hydro_disable_soundfx
-                ;;
-            esac
-            sleep 0.3
+            if [ "$soc" = "mt6985" ]; then
+                case $key_click_2 in
+                KEY_VOLUMEUP)
+                    ui_print "Maintenant, choisissez votre préréglage EQ préféré"
+                    ui_print "Volume +: active les fichiers Dax depuis Dax 素菜, casque EQ inclus"
+                    ui_print "Volume -: active les fichiers Dax depuis AB, inclut uniquement l'EQ du Haut - parleur"
+                    while [ "$key_click_8" = "" ]; do
+                        key_click_8=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+                        sleep 0.2
+                    done
+                    case $key_click_8 in
+                        KEY_VOLUMEUP)
+                            ui_print "--Fichier EQ de 素菜 installé"
+                            hydro_enable_soundfx_alt
+                            ;;
+                        *)
+                            ui_print "--Fichier EQ de AB installé"
+                            hydro_enable_soundfx
+                            ;;
+                    esac
+                    ui_print "--Effets sonores activés"
+                    ui_print "--Vous devez installer manuellement MusicFX.apk dans le package zip du module pour vous assurer que l'effet sonore fonctionne correctement! "
+                    ;;
+                *)
+                    ui_print "--Effets sonores désactivés"
+                    hydro_disable_soundfx
+                    ;;
+                esac
+            else
+                case $key_click_2 in
+                KEY_VOLUMEUP)
+                    ui_print "--Effets sonores activés"
+                    ui_print "--Vous devez installer manuellement MusicFX.apk dans le package zip du module pour vous assurer que l'effet sonore fonctionne correctement! "
+                    hydro_enable_soundfx
+                    ;;
+                *)
+                    ui_print "--Effets sonores désactivés"
+                    hydro_disable_soundfx
+                    ;;
+                esac
+                sleep 0.3
+            fi
         fi
         print_line
         ui_print "Volume + : Activer l'affichage du niveau de batterie réel"
@@ -976,12 +1259,50 @@ hydro_language_fr(){
             iris_install_fr
         fi
         print_line
+        ui_print "Choisissez si vous souhaitez activer une politique de taux de rafraîchissement d'inactivité plus agressive/conservatrice"
+        ui_print "Cela ne modifiera pas nécessairement la consommation électrique, mais cela aura un impact sur les performances de scintillement."
+        ui_print "Après avoir activé la modification, les données sur la puissance et les performances doivent être effacées pour que la gestion du taux de rafraîchissement de Xiaomi fonctionne correctement"
+        ui_print "Volume + : Activer la politique de taux de rafraîchissement d'inactivité modifiée"
+        ui_print "Volume - : Utiliser la stratégie officielle par défaut"
+        while [ "$key_click_9" = "" ]; do
+            key_click_9=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+            sleep 0.2
+        done
+        case $key_click_9 in
+        KEY_VOLUMEUP)
+            ui_print "--Veuillez choisir si vous souhaitez utiliser une politique de taux de rafraîchissement inactif agressive ou désactiver la politique de taux de rafraîchissement inactif"
+            ui_print "--Une stratégie agressive permet d'économiser la consommation d'énergie, la stratégie d'arrêt contribue à réduire le risque de scintillement"
+            ui_print "Volume + : activez une stratégie agressive de taux de rafraîchissement au ralenti"
+            ui_print "Volume - : Désactiver la politique de taux de rafraîchissement inactif"
+            while [ "$key_click_10" = "" ]; do
+                key_click_10=$(getevent -qlc 1 | awk '{ print $3 }' | grep 'KEY_')
+            sleep 0.2
+            done
+            case $key_click_10 in
+            KEY_VOLUMEUP)
+                ui_print "--Stratégie de taux de rafraîchissement agressive au ralenti activée"
+                hydro_refresh_aggressive
+                ;;
+            *)
+                ui_print "--Politique de taux de rafraîchissement inactif désactivée"
+                hydro_refresh_disable
+                ;;
+            esac
+            ;;
+        *)
+            ui_print "--Modification du taux de rafraîchissement au ralenti désactivée"
+            hydro_refresh_default
+            ;;
+        esac
+        print_line
         hydro_settings_backup
         hydro_injection
         ui_print "Installation terminée"
         sed -i "s/^description=.*$/description=$DESC_FR/" "$HYPROP"
         rm -f "$MODPATH"/iris/iris_helper_user_guide_en.md
         rm -f "$MODPATH"/iris/iris_helper_user_guide_zh.md
+        rm -f "$MODPATH"/请读我.md
+        rm -f "$MODPATH"/README.md
         sleep 0.2
         ui_print "Veuillez vous assurer que vous avez pris connaissance des précautions ci-dessus"
         ui_print "Réinstallez le module après une mise à jour du kernel"
@@ -1006,8 +1327,22 @@ hydro_apply_settings(){
     fi
     case $key_click_2 in
     KEY_VOLUMEUP)
-        ui_print "--Sound optimization installed"
-        hydro_enable_soundfx
+        if [ "$soc" = "mt6985" ]; then
+            case $key_click_8 in
+            KEY_VOLUMEUP)
+                ui_print "--EQ from 素菜 installed"
+                hydro_enable_soundfx_alt
+                ;;
+            *)
+                ui_print "--EQ from AB installed"
+                hydro_enable_soundfx
+                ;;
+            esac
+            ui_print "--Sound optimization activated"
+        else
+            ui_print "--Sound optimization activated"
+            hydro_enable_soundfx
+        fi
         ;;
     *)
         ui_print "--Sound optimization disabled"
@@ -1062,6 +1397,24 @@ hydro_apply_settings(){
             ;;
         esac
     fi
+    case $key_click_9 in
+    KEY_VOLUMEUP)
+        case $key_click_10 in
+        KEY_VOLUMEUP)
+            ui_print "--Aggressive idle refresh rate strategy activated"
+            hydro_refresh_aggressive
+            ;;
+        *)
+            ui_print "--Idle refresh rate policy disabled"
+            hydro_refresh_disable
+            ;;
+        esac
+        ;;
+    *)
+        ui_print "--Idle refresh rate modification disabled"
+        hydro_refresh_default
+        ;;
+    esac
     case $key_click_0 in
     KEY_VOLUMEUP)
         sed -i "s/^description=.*$/description=$DESC_ZH/" "$HYPROP"
@@ -1129,11 +1482,19 @@ set_perm "$MODPATH"/iris/iris7_ccf3.fw 0 0 0755
 set_perm "$MODPATH"/iris/iris7_ccf4.fw 0 0 0755
 set_perm "$MODPATH"/real_batt 0 0 0755
 
-hydro_pre_install
-
 if [ -f "/data/adb/modules/ab_optimizer/settings.txt" ]; then
-    print_line
     hydro_read_settings
+    old_settings_apply_go=1
+fi
+
+if [ -f "/data/adb/modules_update/ab_optimizer/settings.txt" ]; then
+    settings_old=/data/adb/modules_update/ab_optimizer/settings.txt
+    hydro_read_settings
+    old_settings_apply_go=1
+fi
+
+if [ $old_settings_apply_go = 1 ]; then
+    print_line
     case $key_click_0 in
     KEY_VOLUMEUP)
         lang="zh"
@@ -1143,6 +1504,8 @@ if [ -f "/data/adb/modules/ab_optimizer/settings.txt" ]; then
         ui_print "音量键 - : 否"
         rm -f "$MODPATH"/iris/iris_helper_user_guide_en.md
         rm -f "$MODPATH"/iris/iris_helper_user_guide_fr.md
+        rm -f "$MODPATH"/README.md
+        rm -f "$MODPATH"/Lis-moi.md
         ;;
     *)
         case $key_click_fe in
@@ -1154,7 +1517,8 @@ if [ -f "/data/adb/modules/ab_optimizer/settings.txt" ]; then
             ui_print "Volume - : Non"
             rm -f "$MODPATH"/iris/iris_helper_user_guide_en.md
             rm -f "$MODPATH"/iris/iris_helper_user_guide_zh.md
-            rm -f "$MODPATH"/注意事项.md
+            rm -f "$MODPATH"/请读我.md
+            rm -f "$MODPATH"/README.md
             ;;
         *)
             lang="en"
@@ -1164,7 +1528,8 @@ if [ -f "/data/adb/modules/ab_optimizer/settings.txt" ]; then
             ui_print "Volume - : No"
             rm -f "$MODPATH"/iris/iris_helper_user_guide_zh.md
             rm -f "$MODPATH"/iris/iris_helper_user_guide_fr.md
-            rm -f "$MODPATH"/注意事项.md
+            rm -f "$MODPATH"/请读我.md
+            rm -f "$MODPATH"/Lis-moi.md
             ;;
         esac
     esac
@@ -1175,10 +1540,11 @@ if [ -f "/data/adb/modules/ab_optimizer/settings.txt" ]; then
     print_line
     case $key_click_a in
     KEY_VOLUMEUP)
+        hydro_pre_install
         hydro_injection
         hydro_apply_settings
         ui_print "--Installing"
-        cp /data/adb/modules/ab_optimizer/settings.txt /data/adb/modules_update/ab_optimizer
+        cp $settings_old /data/adb/modules_update/ab_optimizer
         ;;
     *)
         ui_print "--Reinstall"
@@ -1191,6 +1557,9 @@ if [ -f "/data/adb/modules/ab_optimizer/settings.txt" ]; then
         key_click_5=""
         key_click_6=""
         key_click_7=""
+        key_click_8=""
+        key_click_9=""
+        key_click_10=""
         hydro_start_install
         ;;
     esac
