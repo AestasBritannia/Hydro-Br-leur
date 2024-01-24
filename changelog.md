@@ -1,3 +1,11 @@
+378:
+Billions of issues fixed.
+Reconstruct the SDR to HDR strategy.
+Optimize the performance experience of Genshin Impact when interpolating frames from 40 frames to 120 frames.
+Optimizing performance experience for Reverse: 1999.
+Updated sound effects for all platforms.
+Supports Pandora kernel 20240121 and later versions (to be released).
+
 367:
 Fixed an issue where "Disable Idle Refresh Rate Reduction Policy" functioned abnormally.
 Modify Genshin Impact’s super-resolution strategy.
