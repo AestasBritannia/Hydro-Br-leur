@@ -2,20 +2,19 @@
 <!--Copyright 1145-1919 Commune de Fontaine. No Rights Reserved.-->
 <IrisData>
 
-<Information Version="282" />
+<Information Version="282"/>
 
 <GoldenFwPath>/odm/etc</GoldenFwPath>
 <CalibratedFwPath>/mnt/vendor/iris</CalibratedFwPath>
 
-<SoftHdrMethod>1</SoftHdrMethod>
-<SoftIrisHDR10Enabled>true</SoftIrisHDR10Enabled>
-<PxlwFrameRateCheck>750</PxlwFrameRateCheck>
+<SoftHdrMethod>0</SoftHdrMethod>
+<SoftIrisHDR10Enabled>false</SoftIrisHDR10Enabled>
 <UseIrisCSCFeatureEnable>true</UseIrisCSCFeatureEnable>
 <PxlwGameMemcDebugEnable>true</PxlwGameMemcDebugEnable>
 
 <!--Pixelworks dimming function-->
 <PxlwDimmingEnabled>false</PxlwDimmingEnabled>
-<PxlwDimmingRate MaxLevel="8191" RefreshRate="60" />
+<PxlwDimmingRate MaxLevel="8191" RefreshRate="60"/>
 <PxlwSdr2hdrDimmingRate>16</PxlwSdr2hdrDimmingRate>
 
 <!--Pixelworks Iris color mode list-->
@@ -177,11 +176,11 @@
 
 <!--game 3 原神-->
 <PxlwSuperResolutionList Id="2" Game="3">
-    <PxlwSuperResolution Input="680x1511" Output="1220x2712" Count="4">3,3,0,15</PxlwSuperResolution>
-	<PxlwSuperResolution Input="728x1620" Output="1220x2712" Count="4">3,3,0,15</PxlwSuperResolution>
-	<PxlwSuperResolution Input="864x1920" Output="1220x2712" Count="4">3,3,0,15</PxlwSuperResolution>
-	<PxlwSuperResolution Input="1080x2400" Output="1220x2712" Count="4">3,3,0,15</PxlwSuperResolution>
-	<PxlwSuperResolution Input="1220x2712" Output="1220x2712" Count="4">3,3,0,15</PxlwSuperResolution>
+    <PxlwSuperResolution Input="680x1511" Output="1220x2712" Count="4">10,15,7,15</PxlwSuperResolution>
+	<PxlwSuperResolution Input="728x1620" Output="1220x2712" Count="4">10,15,7,15</PxlwSuperResolution>
+	<PxlwSuperResolution Input="864x1920" Output="1220x2712" Count="4">8,12,7,12</PxlwSuperResolution>
+	<PxlwSuperResolution Input="1080x2400" Output="1220x2712" Count="4">7,12,6,10</PxlwSuperResolution>
+	<PxlwSuperResolution Input="1220x2712" Output="1220x2712" Count="4">6,10,6,10</PxlwSuperResolution>
 </PxlwSuperResolutionList>
 
 <!--game 4 崩坏3-->
@@ -208,10 +207,10 @@
 
 <!--game 10 王者荣耀-->
 <PxlwSuperResolutionList Id="6" Game="10">
-    <PxlwSuperResolution Input="1080x2400" Output="1220x2712" Count="4">6,10,6,9</PxlwSuperResolution>
-	<PxlwSuperResolution Input="964x2152" Output="1220x2712" Count="4">6,8,7,9</PxlwSuperResolution>
-	<PxlwSuperResolution Input="804x1792" Output="1220x2712" Count="4">6,8,7,10</PxlwSuperResolution>
-	<PxlwSuperResolution Input="640x1432" Output="1220x2712" Count="4">6,8,7,10</PxlwSuperResolution>
+    <PxlwSuperResolution Input="1080x2400" Output="1220x2712" Count="4">7,12,7,9</PxlwSuperResolution>
+	<PxlwSuperResolution Input="964x2152" Output="1220x2712" Count="4">7,12,7,9</PxlwSuperResolution>
+	<PxlwSuperResolution Input="804x1792" Output="1220x2712" Count="4">7,12,7,9</PxlwSuperResolution>
+	<PxlwSuperResolution Input="640x1432" Output="1220x2712" Count="4">8,12,7,10</PxlwSuperResolution>
 </PxlwSuperResolutionList>
 
 <!--game 11 光遇-->
@@ -279,57 +278,57 @@
 
 <!--关闭-->
 <PxlwSdr2hdrList Id="0">
-	<PxlwSdr2hdrInfo Sdr2hdr="0" AlEnable="0" />
+	<PxlwSdr2hdrInfo Sdr2hdr="0" AlEnable="0"/>
 </PxlwSdr2hdrList>
 
 <!--视频-->
 <PxlwSdr2hdrList Id="1">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" AlEnable="1" />
+	<PxlwSdr2hdrInfo Sdr2hdr="10" AlEnable="1"/>
 </PxlwSdr2hdrList>
 
 <!--增强视频-->
 <PxlwSdr2hdrList Id="2">
-	<PxlwSdr2hdrInfo Sdr2hdr="8" Ai="480" AlEnable="1" ColorGamut="13" ColorGains="0x100040004000" />
+	<PxlwSdr2hdrInfo Sdr2hdr="8" Ai="480" AlEnable="1" ColorGamut="13" ColorGains="0x100040004000"/>
 </PxlwSdr2hdrList>
 
 <!--游戏-->
 <PxlwSdr2hdrList Id="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="21" AlEnable="0" ColorGamut="13" ColorGains="0x100040004000" />
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="21" AlEnable="0" ColorGamut="13" ColorGains="0x100040004000"/>
 </PxlwSdr2hdrList>
 
 <!--低功耗视频-->
 <PxlwSdr2hdrList Id="4">
-	<PxlwSdr2hdrInfo Sdr2hdr="256" ColorGamut="3" AnalogBypassMode="1" />
+	<PxlwSdr2hdrInfo Sdr2hdr="256" ColorGamut="3" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--低功耗游戏-->
 <PxlwSdr2hdrList Id="5">
-	<PxlwSdr2hdrInfo Sdr2hdr="256" ColorGamut="3" AnalogBypassMode="1" />
+	<PxlwSdr2hdrInfo Sdr2hdr="256" ColorGamut="3" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--增强视频 6500K-->
 <PxlwSdr2hdrList Id="6">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="0" ColorGamut="3" ColorTempValue="6500" />
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="0" ColorGamut="3" ColorTempValue="6500"/>
 </PxlwSdr2hdrList>
 
 <!--低功耗视频 apl 场景-->
 <PxlwSdr2hdrList Id="7">
-	<PxlwSdr2hdrInfo Sdr2hdr="0" ColorGamut="22" AnalogBypassMode="1" SupportApl="0" />
+	<PxlwSdr2hdrInfo Sdr2hdr="0" ColorGamut="22" AnalogBypassMode="1" SupportApl="0"/>
 </PxlwSdr2hdrList>
 
 <!--日光增强-->
 <PxlwSdr2hdrList Id="8">
-	<PxlwSdr2hdrInfo Sdr2hdr="8" AlEnable="1" />
+	<PxlwSdr2hdrInfo Sdr2hdr="8" AlEnable="1"/>
 </PxlwSdr2hdrList>
 
 <!--游戏模式鲜艳-->
 <PxlwSdr2hdrList Id="10">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x100040004000" />
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x100040004000"/>
 </PxlwSdr2hdrList>
 
 <!--游戏模式明亮-->
 <PxlwSdr2hdrList Id="11">
-	<PxlwSdr2hdrInfo Sdr2hdr="256" Ai="480" AlEnable="0" ColorGamut="14" ColorTempValue="6500" />
+	<PxlwSdr2hdrInfo Sdr2hdr="256" Ai="480" AlEnable="0" ColorGamut="14" ColorTempValue="6500"/>
 </PxlwSdr2hdrList>
 
 <!--游戏模式明艳-->
@@ -339,77 +338,77 @@
 
 <!--生动-->
 <PxlwSdr2hdrList Id="13">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="3" ColorGamut="1" />
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="3" ColorGamut="1"/>
 </PxlwSdr2hdrList>
 
 <!--明亮-->
 <PxlwSdr2hdrList Id="14">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="4" ColorGamut="7" ColorGains="0x100040004000" />
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="4" ColorGamut="7" ColorGains="0x100040004000"/>
 </PxlwSdr2hdrList>
 
 <!--柔和-->
 <PxlwSdr2hdrList Id="15">
-	<PxlwSdr2hdrInfo Sdr2hdr="137" Ai="5" ColorGamut="3" />
+	<PxlwSdr2hdrInfo Sdr2hdr="137" Ai="5" ColorGamut="3"/>
 </PxlwSdr2hdrList>
 
 <!--英雄联盟-->
-<PxlwSdr2hdrList Id="16" Game="16">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x100040004000" />
+<PxlwSdr2hdrList Id="16">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x100040004000"/>
 </PxlwSdr2hdrList>
 
 <!--原神-->
-<PxlwSdr2hdrList Id="17" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" AnalogBypassMode="1" ColorGains="0x100040004000" />
+<PxlwSdr2hdrList Id="17">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" AnalogBypassMode="1" ColorGains="0x100040004000"/>
 </PxlwSdr2hdrList>
 
 <!--和平精英-->
-<PxlwSdr2hdrList Id="18" Game="0">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x100040004000" />
+<PxlwSdr2hdrList Id="18">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x100040004000"/>
 </PxlwSdr2hdrList>
 
 <!--王者荣耀-->
-<PxlwSdr2hdrList Id="19" Game="10">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="0" Lce="0" ColorGamut="7" ColorGains="0x400040004000" />
+<PxlwSdr2hdrList Id="19">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="0" Lce="0" ColorGamut="7" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--天谕-->
-<PxlwSdr2hdrList Id="20" Game="6">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="10" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="20">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="10" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--GunsGirl-->
-<PxlwSdr2hdrList Id="21" Game="4">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="11" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="21">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="11" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--第五人格-->
-<PxlwSdr2hdrList Id="22" Game="8">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="12" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="22">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="12" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--阴阳师-->
-<PxlwSdr2hdrList Id="23" Game="12">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="13" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="23">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="13" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--光遇-->
-<PxlwSdr2hdrList Id="24" Game="11">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="24">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--QQ飞车-->
-<PxlwSdr2hdrList Id="27" Game="9">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="27">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--穿越火线-->
-<PxlwSdr2hdrList Id="28" Game="13">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="28">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--Moonlight Blade-->
-<PxlwSdr2hdrList Id="29" Game="2">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000" />
+<PxlwSdr2hdrList Id="29">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="23" ColorGamut="14" ColorGains="0x50040004000"/>
 </PxlwSdr2hdrList>
 
 <!--EDR-->
@@ -418,133 +417,136 @@
 </PxlwSdr2hdrList>
 
 <!--和平精英EDR-->
-<PxlwSdr2hdrList Id="31" Game="0" Edr="1">
+<PxlwSdr2hdrList Id="31">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--原神EDR-->
-<PxlwSdr2hdrList Id="32" Game="3" Edr="1">
+<PxlwSdr2hdrList Id="32">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--王者荣耀EDR-->
-<PxlwSdr2hdrList Id="33" Game="10" Edr="1">
+<PxlwSdr2hdrList Id="33">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="16" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--QQ飞车EDR-->
-<PxlwSdr2hdrList Id="34" Game="9" Edr="1">
+<PxlwSdr2hdrList Id="34">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--穿越火线EDR-->
-<PxlwSdr2hdrList Id="35" Game="13" Edr="1">
+<PxlwSdr2hdrList Id="35">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--光遇EDR-->
-<PxlwSdr2hdrList Id="36" Game="11" Edr="1">
+<PxlwSdr2hdrList Id="36">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="16" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--GunsGirl EDR-->
-<PxlwSdr2hdrList Id="37" Game="4" Edr="1">
-	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000" />
+<PxlwSdr2hdrList Id="37">
+	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--英雄联盟EDR-->
-<PxlwSdr2hdrList Id="38" Game="16" Edr="1">
-    <PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000" />
+<PxlwSdr2hdrList Id="38">
+    <PxlwSdr2hdrInfo Sdr2hdr="11" Ai="15" ColorGamut="14" ColorGains="0x400040004000"/>
 </PxlwSdr2hdrList>
 
 <!--原神HDR2-->
-<PxlwSdr2hdrList Id="39" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="0" Lce="0" ColorGamut="7" ColorGains="0x200040004000" />
+<PxlwSdr2hdrList Id="39">
+	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="0" Lce="0" ColorGamut="7" ColorGains="0x200040004000"/>
 </PxlwSdr2hdrList>
 
 <!--和平精英EDR2-->
-<PxlwSdr2hdrList Id="40" Game="0" Edr="1">
+<PxlwSdr2hdrList Id="40">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="19"  Lce="0"/>
 </PxlwSdr2hdrList>
 
 <!--原神EDR2-->
-<PxlwSdr2hdrList Id="41" Game="3" Edr="1">
+<PxlwSdr2hdrList Id="41">
 	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="19"  Lce="0"/>
 </PxlwSdr2hdrList>
 
 <!--低功耗EDR-->
-<PxlwSdr2hdrList Id="42" Edr="1">
-	<PxlwSdr2hdrInfo Sdr2hdr="0" ColorGamut="52" AnalogBypassMode="1" SupportApl="0" />
+<PxlwSdr2hdrList Id="42">
+	<PxlwSdr2hdrInfo Sdr2hdr="0" ColorGamut="52" AnalogBypassMode="1" SupportApl="0"/>
 </PxlwSdr2hdrList>
 
 <!--天谕HDR2-->
-<PxlwSdr2hdrList Id="43" Game="6">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="10" Lce="0" ColorGamut="7" ColorGains="0x300040004000" />
+<PxlwSdr2hdrList Id="43">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="10" Lce="0" ColorGamut="7" ColorGains="0x300040004000"/>
 </PxlwSdr2hdrList>
 
 <!--GunsGirl-->
-<PxlwSdr2hdrList Id="44" Game="4">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="11" Lce="0" ColorGamut="7" ColorGains="0x300040004000" />
+<PxlwSdr2hdrList Id="44">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="11" Lce="0" ColorGamut="7" ColorGains="0x300040004000"/>
 </PxlwSdr2hdrList>
 
 <!--第五人格HDR2-->
-<PxlwSdr2hdrList Id="45" Game="8">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="12" Lce="0" ColorGamut="7" ColorGains="0x300040004000" />
+<PxlwSdr2hdrList Id="45">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="12" Lce="0" ColorGamut="7" ColorGains="0x300040004000"/>
 </PxlwSdr2hdrList>
 
 <!--阴阳师HDR2-->
-<PxlwSdr2hdrList Id="46" Game="12">
-	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="13" Lce="0" ColorGamut="7" ColorGains="0x300040004000" />
+<PxlwSdr2hdrList Id="46">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="13" Lce="0" ColorGamut="7" ColorGains="0x300040004000"/>
 </PxlwSdr2hdrList>
 
+
+
+<!--以下为自定义HDR-->
 <!--原神HDR3-->
-<PxlwSdr2hdrList Id="47" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="0" Lce="0" ColorGamut="3" AnalogBypassMode="1" />
+<PxlwSdr2hdrList Id="47">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="5" ColorGamut="14" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
-<!--原神HDR4-->
-<PxlwSdr2hdrList Id="48" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="10" Ai="0" Lce="0" ColorGamut="14" AnalogBypassMode="1" />
+<!--原神HDR4（推荐）-->
+<PxlwSdr2hdrList Id="48">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="7" ColorGamut="14" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
-<!--原神HDR5（推荐）-->
-<PxlwSdr2hdrList Id="49" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="23" Lce="0" ColorGamut="14" AnalogBypassMode="1" />
+<!--原神HDR5-->
+<PxlwSdr2hdrList Id="49">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="9" ColorGamut="14" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
-<!--原神HDR6（推荐）-->
-<PxlwSdr2hdrList Id="50" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="0" Ai="0" Lce="1" ColorGamut="5" AnalogBypassMode="1" />
+<!--原神HDR6-->
+<PxlwSdr2hdrList Id="50">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="15" ColorGamut="14" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--原神HDR7-->
-<PxlwSdr2hdrList Id="51" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="1" Lce="0" ColorGamut="3" AnalogBypassMode="1" />
+<PxlwSdr2hdrList Id="51">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="20" ColorGamut="14" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--原神HDR8-->
-<PxlwSdr2hdrList Id="52" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="29" Lce="0" ColorGamut="3" AnalogBypassMode="1" />
+<PxlwSdr2hdrList Id="52">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="5" ColorGamut="3" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--原神HDR9-->
-<PxlwSdr2hdrList Id="53" Game="3">
-	<PxlwSdr2hdrInfo Sdr2hdr="11" Ai="23" Lce="0" ColorGamut="3" AnalogBypassMode="1" />
+<PxlwSdr2hdrList Id="53">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="10" ColorGamut="3" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--少女前线2HDR-->
-<PxlwSdr2hdrList Id="54" >
-	<PxlwSdr2hdrInfo Sdr2hdr="0" ColorGamut="22" AnalogBypassMode="1" SupportApl="0" />
+<PxlwSdr2hdrList Id="54">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="15" ColorGamut="3" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--星穹铁道HDR-->
-<PxlwSdr2hdrList Id="55" Game="155">
-	<PxlwSdr2hdrInfo Sdr2hdr="0" ColorGamut="3" Lce="0" AnalogBypassMode="1" SupportApl="0" />
+<PxlwSdr2hdrList Id="55">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="15"  ColorGamut="14" AnalogBypassMode="1"/>
 </PxlwSdr2hdrList>
 
 <!--星穹铁道HDR2（推荐）-->
-<PxlwSdr2hdrList Id="56" Game="155">
-	<PxlwSdr2hdrInfo Sdr2hdr="0" ColorGamut="3" Lce="0" AnalogBypassMode="1" SupportApl="0" />
+<PxlwSdr2hdrList Id="56">
+	<PxlwSdr2hdrInfo Sdr2hdr="9" Ai="5" ColorGamut="3" AnalogBypassMode="1" SupportApl="0"/>
 </PxlwSdr2hdrList>
 
 </PxlwSdr2hdrGroup>
