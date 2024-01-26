@@ -49,7 +49,7 @@ Arena of Valor<br>
 原神(Genshin Impact)<br>
 崩坏：星穹铁道(Honkai: Star Rail)<br>
 崩坏3(Honkai 3rd)<br>
-尘白禁区（官服）<br>
+尘白禁区(Project Snow: Containment Zone)<br>
 逆水寒<br>
 使命召唤手游（国服、东南亚服）<br>
 和平精英<br>
@@ -63,7 +63,7 @@ Citra 3DS Emulator<br>
 猫和老鼠<br>
 深空之眼<br>
 Grand Theft Auto: San Andreas Definitive Edition(Netflix)<br>
-战双帕弥什<br>
+战双帕弥什（官服、米服<br>
 皇室战争<br>
 Minecraft<br>
 少女前线2：追放<br>
