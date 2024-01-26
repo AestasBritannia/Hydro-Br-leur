@@ -1,3 +1,14 @@
+384:
+Update sound effects.
+Fixed the problem that super-resolutions caused some game screens to be dirty.
+Fixed an issue where some configurations were not properly released to the Dimensity 8300 device.
+Removed some trash.
+Support Project Snow: Containment Zone (Google).
+The sound effect modification of the K70E is limited to solve the problem that it does not boot on Hyper OS 1.0.10.0.
+Delete the firmware modification to the Iris X7 to optimize the latency of MEMC.
+Optimize the fluency of the system desktop.
+Optimize the picture performance of Project Snow: Containment Zone and Honkai: Star Rail.
+
 378:
 Billions of issues fixed.
 Reconstruct the SDR to HDR strategy.
