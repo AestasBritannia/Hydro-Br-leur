@@ -1,3 +1,12 @@
+394:
+Support Telegram, MT file manager.
+Optimize the smoothness of some applications.
+Optimize the performance of Dimensity 8300 devices.
+Updated sound effects.
+Optimize installation boot prompts.
+Optimize installation logic.
+Other adjustments.
+
 384:
 Update sound effects.
 Fixed the problem that super-resolutions caused some game screens to be dirty.
