@@ -1,3 +1,9 @@
+400:
+Apply 60 to 144 and 40 to 144 frame insertion to Genshin Impact , Project Snow and Honkai: Star Rail.
+Fixed the issue that causing some devices have an abnormal affinity plan when using official kernel.
+Reconstructed sound optimization (AB's dax for Corot).
+Fixed some bugs.
+
 394:
 Support Telegram, MT file manager.
 Optimize the smoothness of some applications.
