@@ -1,3 +1,11 @@
+406:
+Adjust HDR and super-resolution strategies.
+Optimize the frame insertion of Honkai:  Star Rail.
+Disable Honor of Kings' FEAS for the Dimensity 8300/9200 platform to optimize power consumption and frame rate.
+Significantly adjust the sound effects of K60U.
+Other modifications.
+
+
 400:
 Apply 60 to 144 and 40 to 144 frame insertion to Genshin Impact , Project Snow and Honkai: Star Rail.
 Fixed the issue that causing some devices have an abnormal affinity plan when using official kernel.
