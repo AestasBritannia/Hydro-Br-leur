@@ -1,5 +1,8 @@
-407:
+408:
 新年快乐！
+Updated SoundFX for all devices.
+Removed some trash.
+Support OnePlus 11/12, Xiaomi Mi Pad 6 Pro (experimental).
 
 406:
 Adjust HDR and super-resolution strategies.
