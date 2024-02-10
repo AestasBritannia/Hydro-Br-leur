@@ -1,3 +1,6 @@
+407:
+新年快乐！
+
 406:
 Adjust HDR and super-resolution strategies.
 Optimize the frame insertion of Honkai:  Star Rail.
