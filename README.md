@@ -68,6 +68,7 @@ Grand Theft Auto: San Andreas Definitive Edition(Netflix)<br>
 Minecraft<br>
 少女前线2：追放<br>
 元梦之星<br>
+香肠派对<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization.
