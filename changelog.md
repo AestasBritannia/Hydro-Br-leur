@@ -1,3 +1,10 @@
+415:
+Updated sound effects.
+Fixed an issue where rolling back Genshin Impact's scheduling policy resulted in limiting the minimum GPU frequency.
+Modify the HDR strategy of Honor of Kings.
+Modify the sound effects of Corot devices.
+Updated Duchamp's sound effect support.
+
 408:
 新年快乐！
 Updated SoundFX for all devices.
