@@ -4,6 +4,7 @@ Fixed an issue where rolling back Genshin Impact's scheduling policy resulted in
 Modify the HDR strategy of Honor of Kings.
 Modify the sound effects of Corot devices.
 Updated Duchamp's sound effect support.
+Support 香肠派对.
 
 408:
 新年快乐！
