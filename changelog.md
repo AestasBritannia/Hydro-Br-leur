@@ -1,3 +1,21 @@
+427:
+Modified default color mode to "Professional Native Color" (UI prompt).
+Enabled automatic brightness optimization (may not have actual effect).
+Adjusted Citra emulator's scheduling strategy.
+Tuned K60U audio effects.
+Revert Genshin Impact HDR effect.
+Optimized some installation hints and usage instructions.
+Improved 深空之眼 configuration.
+Reduced 王者荣耀 HDR enhancement power consumption.
+Optimized 王者荣耀 adaptive graphics quality policy.
+Optimized performance in 90 frames per second for 王者荣耀.
+Support Dimensity 7200 platform.
+Disable super resolution feature on 蛋仔派对.
+Activated Touch Boost function, adjusting the scheduling strategies for QQ, WeChat, Meituan, Bilibili, Baidu Tieba, WeiBo, Coolapk, NetEase Cloud Music, TapTap, Taobao, Xianyu (experimental).
+Rebuilt Hydro Power for Dimensity 8100/9000 (experimental).
+Added support for Milthm, Hotta, Call of Duty: Warzone Mobile.
+Support Hotta at 48/72 frame interpolation to 144 frames.
+
 415:
 Updated sound effects.
 Fixed an issue where rolling back Genshin Impact's scheduling policy resulted in limiting the minimum GPU frequency.
