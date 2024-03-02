@@ -1,3 +1,11 @@
+441:
+Fixed the issue that Joyose config cannot be automatically injected.
+Fixed the issue that certain configurations aren't properly applied on official kernel.
+Updated sound effects.
+Support Turrit, Sakura School Simulator, 知到, 雷索那斯, 来自星尘, 不背单词.
+Adjust per-app config for Genshin impact, Honor of Kings.
+Activated Utilization Clamping for some daily apps, deactivated for certain games.
+
 427:
 Modified default color mode to "Professional Native Color" (UI prompt).
 Enabled automatic brightness optimization (may not have actual effect).
