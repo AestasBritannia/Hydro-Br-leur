@@ -1,3 +1,6 @@
+444:
+Fixed a fatal error.
+
 441:
 Fixed the issue that Joyose config cannot be automatically injected.
 Fixed the issue that certain configurations aren't properly applied on official kernel.
