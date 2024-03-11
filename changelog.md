@@ -1,3 +1,7 @@
+450:
+Adjusted per-app config for certain Apps.
+Deleted some unused HDR presets.
+
 444:
 Fixed a fatal error.
 
