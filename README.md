@@ -1,5 +1,5 @@
 # Hydro-BrÛleur
-  A magisk module for devices running on Dimensity flagship platforms. Providing some features contributed by Shadow3, Mly, Ray and Hamjin.
+  A magisk module for devices running on Dimensity flagship platforms and OnePlus devices. Providing some features contributed by Shadow3, Mly, Ray and Hamjin.
 
 # Features:
   1. Optimizes different application scenarios to enhance user experience. It includes adjusting affinity, memory management, processor and graphics processor frequency policies, etc.
@@ -16,13 +16,13 @@
   
   7. Supports displaying real battery level, thanks to @Shadow3.
 
-  8. Supports Pixelworks X7 parameter configuration, Pandora FEAS parameter configuration, and MIUI frame lock configuration for any App (Only for K60 Ultra).
+  8. Supports Pixelworks X7/X7P parameter configuration, Pandora FEAS parameter configuration, and MIUI frame lock configuration for any App.
 
-  9. Customized Pixelworks X7 (PX8768) super resolution and SDR2HDR/EDR presets.
+  9. Customized Pixelworks X7/X7P super resolution and SDR2HDR/EDR presets.
 
   10. Support dynamic refresh rate policy modification.
 
-# Supported Apps:
+# Supported Apps (MTK):
 QQ<br>
 微信<br>
 淘宝<br>
@@ -79,6 +79,6 @@ The module is compatible with A-SOUL Games Optimization.
 
 Partly compatible with Scene 7.
 
-Supports up-to 2712x1220 resolution rendering in Genshin Impact. You need to enable the option in MIUI Game Turbo.
+Supports up-to 2712x1220 resolution rendering in Genshin Impact on Hyper OS/MIUI. You need to enable the option in MIUI Game Turbo.
 
 If you have any comments or suggestions, you can contact 981916119@qq.com.
