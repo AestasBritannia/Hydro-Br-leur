@@ -13,6 +13,8 @@ Ace2P/3 speakers use deep buffer to optimize performance.
 Some small features have been enabled.
 Optimize the super-resolution performance of Genshin Impact, Honkai:Star Rail, 来自星尘, Girls Frontline 2, 深空之眼.
 Sound effect modification.
+Fixed an issue causing Ace3 display abnormally.
+Corrected some descriptions for X7 Gen 2 in the user guide.
 Other modifications.
 
 450:
