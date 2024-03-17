@@ -1,3 +1,7 @@
+471:
+Support PUBG: Mobile, 极品飞车：集结.
+Small fixes.
+
 450:
 Adjusted per-app config for certain Apps.
 Deleted some unused HDR presets.
