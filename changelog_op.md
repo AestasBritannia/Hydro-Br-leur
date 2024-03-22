@@ -1,3 +1,8 @@
+480:
+Significantly improved sound quality on Ace2P/3.
+Fixed the issue that buffer works abnormally on Ace2P/3 causing bubble sound on speakers.
+Support 简体中文(Simplified Chinese) and Français(French).
+
 471:
 Ace2P supports complete sound effects modification.
 Adjust some installation prompts.
