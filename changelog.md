@@ -1,3 +1,6 @@
+480:
+Changed prompts while installing in Chinese.
+
 471:
 Support PUBG: Mobile, 极品飞车：集结.
 Small fixes.
