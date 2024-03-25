@@ -1,5 +1,6 @@
-487:
+489:
 Optimized presets for Iris Helper.
+Fixed an issue.
 
 480:
 Changed prompts while installing in Chinese.
