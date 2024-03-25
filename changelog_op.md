@@ -1,4 +1,4 @@
-487:
+489:
 Another great step forward for sound quality on Ace 3.
 Supports memory management for Ace2P/Ace3/12, originally from Pandora Team.
 Fixed the issue that brightness and video MEMC function not properly installed.
