@@ -1,3 +1,9 @@
+487:
+Another great step forward for sound quality on Ace 3.
+Supports memory management for Ace2P/Ace3/12, originally from Pandora Team.
+Fixed the issue that brightness and video MEMC function not properly installed.
+
+
 480:
 Significantly improved sound quality on Ace2P/3.
 Fixed the issue that buffer works abnormally on Ace2P/3 causing bubble sound on speakers.
