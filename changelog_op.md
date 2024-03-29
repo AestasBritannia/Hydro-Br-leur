@@ -1,3 +1,8 @@
+496:
+Fixed the issue that volume level cannot be controlled over Bluetooth or USBDAC on occasion.
+Fixed the issue causing random crash.
+
+
 489:
 Another great step forward for sound quality on Ace 3.
 Supports memory management for Ace2P/Ace3/12, originally from Pandora Team.
