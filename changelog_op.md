@@ -2,6 +2,7 @@
 Significantly improved sound quality of OnePlus 12.
 Optimized sound quality for all devices.
 Adjusted sound effect for certain game scene.
+Audio recording now supports a sampling rate up to 96kHz.
 Modified VRR optimization installation logic, NEED TO BE RE-INSTALLED.
 
 499:
