@@ -1,3 +1,9 @@
+503:
+Significantly improved sound quality of OnePlus 12.
+Optimized sound quality for all devices.
+Adjusted sound effect for certain game scene.
+Modified VRR optimization installation logic, NEED TO BE RE-INSTALLED.
+
 499:
 Fixed the issue that volume level cannot be controlled over Bluetooth or USBDAC on occasion.
 Fixed the issue causing random crash.
