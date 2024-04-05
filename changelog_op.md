@@ -1,3 +1,6 @@
+505:
+Re-constructed dax file for speakers.
+
 503:
 Significantly improved sound quality of OnePlus 12.
 Optimized sound quality for all devices.
