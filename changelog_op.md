@@ -1,6 +1,7 @@
 506:
 Re-constructed dax file for speakers.
 Support Ace 3V.
+Fixed the issue that causing abnormal brightness reduction.
 
 503:
 Significantly improved sound quality of OnePlus 12.
