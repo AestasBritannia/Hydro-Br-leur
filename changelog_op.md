@@ -1,3 +1,7 @@
+512:
+Fixed the issue that certain devices (11/Ace2P) performs abnormally on USBDAC.
+Optimized sound effects.
+
 506:
 Re-constructed dax file for speakers.
 Support Ace 3V.
