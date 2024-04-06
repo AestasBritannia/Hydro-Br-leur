@@ -1,5 +1,6 @@
-505:
+506:
 Re-constructed dax file for speakers.
+Support Ace 3V.
 
 503:
 Significantly improved sound quality of OnePlus 12.
