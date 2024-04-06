@@ -1,3 +1,10 @@
+506:
+Support MEMC/SR
+com.rockstargames.gtavc.de
+com.rockstargames.gtasa.de
+com.rockstargames.gta3.de
+com.ea.game.pvz2_row
+
 503:
 Synced update of sound effect.
 
