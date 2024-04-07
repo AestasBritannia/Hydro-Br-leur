@@ -1,6 +1,9 @@
-512:
+514:
 Fixed the issue that certain devices (11/Ace2P) performs abnormally on USBDAC.
+Fixed abnormal minimum brightness on 11/Ace2P.
+Adjusted virtual bass effect.
 Optimized sound effects.
+
 
 506:
 Re-constructed dax file for speakers.
