@@ -1,9 +1,13 @@
-514:
+518:
 Fixed the issue that certain devices (11/Ace2P) performs abnormally on USBDAC.
 Fixed abnormal minimum brightness on 11/Ace2P.
 Support video MEMC for 抖音, 快手.
-Adjusted virtual bass effect.
 Optimized sound effects.
+Support optional installation for Iris Enhancement and Brightness Extention.
+Optimized installation logic.
+Optimized performance.
+Support full removal of Memory Optimization.
+PLEASE REINSTALL AFTER UNINSTALLING AND REBOOTING
 
 
 506:
