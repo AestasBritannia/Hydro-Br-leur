@@ -20,7 +20,7 @@
 
   9. Customized Pixelworks X7/X7P super resolution and SDR2HDR/EDR presets.
 
-  10. Support dynamic refresh rate policy modification.
+  10. Support variable refresh rate policy and maximum brightness modification.
 
 # Supported Apps (MTK):
 QQ<br>
@@ -79,6 +79,6 @@ The module is compatible with A-SOUL Games Optimization.
 
 Partly compatible with Scene 7.
 
-Supports up-to 2712x1220 resolution rendering in Genshin Impact on Hyper OS/MIUI. You need to enable the option in MIUI Game Turbo.
+Supports up-to 2712x1220 resolution rendering in Genshin Impact on Hyper OS/MIUI(MTK). You need to enable the option in MIUI Game Turbo.
 
 If you have any comments or suggestions, you can contact 981916119@qq.com.
