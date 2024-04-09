@@ -1,3 +1,6 @@
+525:
+Support 射雕.
+
 512:
 Synced soundfx update.
 
