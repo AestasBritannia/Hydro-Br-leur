@@ -3,6 +3,7 @@ Fixed all issues related to abnormal brightness on all devices.
 Add detection for kernel version, now memory management won't be installed when running on devices have Pandora kernel installed.
 Fixed the issue that Iris related functions are still available for Ace 3V though it doesn't have it.
 Some optimization related to battery life.
+Now some functions do not require redeployment while reinstalling without rebooting.
 
 518:
 Fixed the issue that certain devices (11/Ace2P) performs abnormally on USBDAC.
