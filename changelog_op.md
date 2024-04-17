@@ -1,5 +1,4 @@
 549:
-*Pre-release*
 Hydrostellaire 沨莹 1.3.49(549)
 C version (Realme, OnePlus)
 
