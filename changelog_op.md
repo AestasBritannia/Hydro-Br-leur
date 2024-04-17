@@ -1,3 +1,26 @@
+549:
+*Pre-release*
+Hydrostellaire 沨莹 1.3.49(549)
+C version (Realme, OnePlus)
+
+Fixed an issue that incorrectly allowed Kernel SU and APATCH installations in some cases.
+Added brightness enhancement support for Realme GT Master Exploration Edition, GT 5 Pro, and GT Neo 6 SE.
+Added variable refresh rate optimization support for Realme GT Master Exploration Edition, GT 5 Pro, and GT Neo 6 SE.
+Added memory management support for Realme GT5Pro and GT Neo6SE.
+Added support for other functions of Realme GT Master Exploration Edition, GT5 Pro, and GT Neo 6 SE.
+Optimized variable refresh rate, now blocks active framerate reduction and only enables content frame rate matching for optimal smoothness.
+Optimize the refresh rate configuration list to automatically match the content refresh rate in all apps without locking the upper limit of the refresh rate.
+Optimize speaker performance, adjust equalizer configuration based on Ace 3 and disable other redundant post-processing.
+Enrich the instructions for using Iris Helper to make it easier for users to master how to use it.
+Adjust Ace3's super-resolution preset configuration.
+Supports completely turning off memory management optimization.
+Force enable ultra low power AoD.
+Enable analog bypass optimization and low-power optimization for independent graphics chips.
+Forced enablement for devices that do not support advanced animations.
+Synchronize Pandora changes to LMK.
+Removed Surfaceflinger tweaks.
+Add presets for SR on Ace3, in order to provide an independent SR function.
+
 525:
 Fixed all issues related to abnormal brightness on all devices.
 Add detection for kernel version, now memory management won't be installed when running on devices have Pandora kernel installed.
