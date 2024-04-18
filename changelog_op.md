@@ -1,3 +1,9 @@
+550:
+Support optional bass enhancement.
+Updated ZRAM module.
+Fixed certain issues about refresh rate.
+Support touch panel report rate adjustment for Neo 6 SE.
+
 549:
 Hydrostellaire 沨莹 1.3.49(549)
 C version (Realme, OnePlus)
