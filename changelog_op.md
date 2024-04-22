@@ -1,3 +1,8 @@
+1.4.05(565):
+Several bug fixes.
+Optimized some processes.
+Apply sound optimization for Realme GT Master Edition.
+
 550:
 Support optional bass enhancement.
 Updated ZRAM module.
