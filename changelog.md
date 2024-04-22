@@ -1,3 +1,10 @@
+1.4.05(565):
+Support 绝区零, 第五人格.
+Synced soundfx update.
+Rebuild Iris Helper for lower cost.
+New user guide for Iris Helper.
+Fixed some issues.
+
 525:
 Support 射雕.
 
