@@ -1,3 +1,7 @@
+1.4.12(572):
+Soundfx update.
+Automatically uninstall conflicting modules while booting.
+
 1.4.05(565):
 Several bug fixes.
 Optimized some processes.
