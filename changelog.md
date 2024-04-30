@@ -1,3 +1,7 @@
+1.4.12(572):
+Soundfx update.
+Automatically uninstall conflicting modules while booting.
+
 1.4.05(565):
 Support 绝区零, 第五人格.
 Synced soundfx update.
