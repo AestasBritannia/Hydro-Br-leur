@@ -1,3 +1,9 @@
+1.4.14(574):
+Try to fix the issue causing LHDC not working.
+Support AI eyecare for Ace 3/3V, GT5 Pro, OnePlus 12.
+Support game AI eyecare for Ace 3V, GT5 Pro, OnePlus 12(Ace 3 already suppprted in previous versions).
+More functions added.
+
 1.4.12(572):
 Soundfx update.
 Automatically uninstall conflicting modules while booting.
