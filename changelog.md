@@ -1,3 +1,6 @@
+1.4.18(578):
+Provide certain detections for conflicts and potentially malicious modules.
+
 1.4.12(572):
 Soundfx update.
 Automatically uninstall conflicting modules while booting.
