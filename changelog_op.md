@@ -1,3 +1,7 @@
+1.4.18(578):
+Provide certain detections for conflicts and potentially malicious modules.
+Other optimizations.
+
 1.4.14(574):
 Try to fix the issue causing LHDC not working.
 Support AI eyecare for Ace 3/3V, GT5 Pro, OnePlus 12.
