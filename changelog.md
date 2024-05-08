@@ -1,8 +1,6 @@
 1.5.05(595):
 Optimize installation guidance.
 Optimize conflict detection.
-Adjust the application of super-resolution strategy in Ace3 section.
-Optimize conflict detection logic.
 
 1.4.18(578):
 Provide certain detections for conflicts and potentially malicious modules.
