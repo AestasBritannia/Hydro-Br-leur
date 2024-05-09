@@ -1,11 +1,11 @@
-1.5.05(595):
+1.5.11(601):
 Redo and add rendering optimization back.
 Optimize installation guidance.
 Optimize conflict detection.
 Adjust the application of super-resolution strategy in Ace3 section.
-Adjust speaker configuration.
+New speaker configuration.
 Support enabling Vulkan for Genshin Impact.
-Supports GT 5 Pro and Neo 6 SE audio optimization.
+Supports GT 5 Pro and Neo 6 , Neo 6 SE audio optimization.
 Adjust installation guidance.
 Fix the issue of Bluetooth LHDC not working.
 Add other features.
