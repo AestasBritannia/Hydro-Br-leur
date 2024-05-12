@@ -1,3 +1,7 @@
+1.5.15(605):
+Enhanced conflict detection.
+Sync soundfx update.
+
 1.5.06(596):
 Sync soundfx update.
 Support MEMC/SR for 第五人格.
