@@ -1,3 +1,8 @@
+1.5.15(605):
+Fixed abnormal deployment on GT Neo 6.
+Enhanced conflict detection.
+Added some small features.
+
 1.5.11(601):
 Redo and add rendering optimization back.
 Optimize installation guidance.
