@@ -4,7 +4,7 @@ Enable sound optimization for GT Master edition.
 Camera enhancement for Ace 3:
 Enable image co-branding related features.
 Enable features such as AI focus tracking, AI night scenes, and starry simulation.
-Supports automatic focus at 60 frames.
+Supports automatic focus at 60 FPS.
 Support more watermarks.
 Supports fast camera.
 Support video recording with more specifications including 4K 120FPS.
