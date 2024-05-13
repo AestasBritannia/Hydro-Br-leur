@@ -1,3 +1,16 @@
+1.6.01(611):
+Dolby effect adjustment.
+Enable sound optimization for GT Master edition.
+Camera enhancement for Ace 3:
+Enable image co-branding related features.
+Enable features such as AI focus tracking, AI night scenes, and starry simulation.
+Supports automatic focus at 60 frames.
+Support more watermarks.
+Supports fast camera.
+Support video recording with more specifications including 4K 120FPS.
+Adjust parameters such as contrast, brightness, and color noise reduction, sharpening, deghosting, saturation, filter strength, brightness, ISO, multi frame synthesis, super-resolution, etc. to optimize the performance of photography/portrait/recording modes in most scenes.
+Supports RAW Plus.
+
 1.5.15(605):
 Fixed abnormal deployment on GT Neo 6.
 Enhanced conflict detection.
