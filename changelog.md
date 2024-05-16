@@ -1,3 +1,7 @@
+1.6.15(625):
+Various performance improvement.
+Sync soundfx update.
+
 1.5.15(605):
 Enhanced conflict detection.
 Sync soundfx update.
