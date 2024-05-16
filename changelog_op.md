@@ -1,3 +1,9 @@
+1.6.15(625):
+Various performance/efficiency improvement, including cpuset, cpufreq efficiency, etc.
+Provide Extreme GT as thermal config remover.
+Various improvements.
+Dynamic frame insertion now supports more Apps.
+
 1.6.01(611):
 Dolby effect adjustment.
 Enable sound optimization for GT Master edition.
