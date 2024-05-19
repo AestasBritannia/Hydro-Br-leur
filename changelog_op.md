@@ -1,3 +1,10 @@
+1.6.23(633):
+Support Master Mode for Ace 3.
+Adjust parameter of effective frames for IMX890 on Ace 3.
+Fixed the issue of wrong kernel version of Ace 2 Pro and OnePlus 12.
+Provide A-SOUL Games Optimization for thread affinity.
+Other improvements.
+
 1.6.15(625):
 Various performance/efficiency improvement, including cpuset, cpufreq efficiency, etc.
 Provide Extreme GT as thermal config remover.
