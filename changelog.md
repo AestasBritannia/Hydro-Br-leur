@@ -1,3 +1,6 @@
+1.6.33(643):
+Support 鸣潮.
+
 1.6.15(625):
 Various performance improvement.
 Sync soundfx update.
