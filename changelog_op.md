@@ -1,3 +1,7 @@
+1.6.33(643):
+Support 鸣潮.
+Various important adjustments.
+
 1.6.23(633):
 Support Master Mode for Ace 3.
 Adjust parameter of effective frames for IMX890 on Ace 3.
