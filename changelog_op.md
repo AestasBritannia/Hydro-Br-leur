@@ -1,3 +1,11 @@
+1.7.03(663):
+Sync system updates for all devices.
+Support Realme GT 2 Master Edition.
+Provide better super resolution effects for 鸣潮(Wuthering Wave).
+Improved performance.
+Make environment detection optional.
+Fixed abnormal prompts.
+
 1.6.33(643):
 Support 鸣潮.
 Various important adjustments.
