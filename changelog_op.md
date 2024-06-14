@@ -1,3 +1,11 @@
+1.7.05(665):
+Add support for global versions (EU, US, GLO, IN, PU) of OnePlus 11, 12, Ace 3.
+Adjust WALT governor.
+Optimized some prompts.
+Optimized conflict detection.
+Optimized size of the module.
+Android versions below 14 are not recommended now.
+
 1.7.03(663):
 Sync system updates for all devices.
 Support Realme GT 2 Master Edition.
