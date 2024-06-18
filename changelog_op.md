@@ -1,3 +1,8 @@
+1.7.08(668):
+Add support for OnePlus 12 EEA.
+Fixed abnormal camera config for OnePlus Ace 2 Pro.
+Support APATCH and Kernel SU.
+
 1.7.05(665):
 Add support for global versions (EU, US, GLO, IN, PU) of OnePlus 11, 12, Ace 3.
 Adjust WALT governor.
