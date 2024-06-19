@@ -1,3 +1,8 @@
+1.7.10(670):
+Aggresive Variable Refresh Rate configuration for Ace 3, 11, 12 and GT 5 Pro.
+New mount method for abnormal cases.
+Sync ASOUL Games Optimization's update.
+
 1.7.08(668):
 Add support for OnePlus 12 EEA.
 Fixed abnormal camera config for OnePlus Ace 2 Pro.
