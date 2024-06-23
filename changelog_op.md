@@ -1,3 +1,22 @@
+Brioche 10/Thüringer 6(684):
+Support OnePlus Ace 2.
+Add the "Performance Optimization" option to optimize the overall performance of the device.
+Update the ZRAM module.
+Rendering optimization adjustments.
+Add AsoulOpt and Extreme GT bundle detection. If the first two are missing, uninstall this module.
+When it is detected that other modules occupy the module ID of AsoulOpt, uninstall this module and this module.
+Optimize OnePlus 11/12's refresh rate.
+Synchronize new features in Color OS 14.1.
+Cancel support for pocket studio function.
+Optimize performance by using a walt governor and making adjustments.
+Optimize the efficiency of installation script execution.
+Fixed a legacy issue.
+Update the AsoulOpt module.
+Attempted to correct the abnormal refresh rate of OnePlus 11/12.
+Adjust some performance changes and use the UAG governor by default to reduce lag.
+Aggressive VRR strategy for each device.
+New mount method.
+
 1.7.10(670):
 Aggresive Variable Refresh Rate configuration for Ace 3, 11, 12 and GT 5 Pro.
 New mount method for abnormal cases.
