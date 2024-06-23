@@ -1,3 +1,18 @@
+Pour Justice 6(684):
+Fine tune the performance of 王者荣耀 and Star Rail games for 8300/9200.
+Adjust the frame insert strategy for 鸣潮.
+New installation script to enhance readability and versatility.
+Remove the uclamp configuration from all models.
+Add Pixelworks X7/Gen2 optimization switch options.
+Optimize the enabling logic of Genshin Impact Vulkan.
+Automatically check/install ASOUL OPT.
+Add rendering optimization functionality.
+Optimize performance tuning.
+Optimize conflict detection.
+Support the detection of modified model modules.
+Optimize installation prompts.
+Update A-SOUL Opt module.
+
 1.6.33(643):
 Support 鸣潮.
 
