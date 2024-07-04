@@ -1,3 +1,10 @@
+Macaron 4/Thüringer 8(701):
+Update A-SOUL Opt to ver A.41.
+Support FI/SR for 绝区零(Official server) (OnePlus Ace 3/Pro only).
+Adjust cpuset policy for better performance.
+Sync kernel modules update of Pandora kernel.
+Adjust SR effect for Genshin Impact, 鸣潮(OnePlus Ace 3/Pro only).
+
 Brioche 10/Thüringer 6(684):
 Support OnePlus Ace 2.
 Add the "Performance Optimization" option to optimize the overall performance of the device.
