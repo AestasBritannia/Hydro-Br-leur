@@ -1,3 +1,7 @@
+Pour Justice 8(701):
+Update A-SOUL Opt to ver A.41.
+Support 绝区零(Official server).
+
 Pour Justice 6(684):
 Fine tune the performance of 王者荣耀 and Star Rail games for 8300/9200.
 Adjust the frame insert strategy for 鸣潮.
