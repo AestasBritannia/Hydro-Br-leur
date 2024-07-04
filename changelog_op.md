@@ -1,4 +1,4 @@
-Macaron 4/Thüringer 8(701):
+Macaron 4/Thüringer 9(701):
 Update A-SOUL Opt to ver A.41.
 Support FI/SR for 绝区零(Official server) (OnePlus Ace 3/Pro only).
 Adjust cpuset policy for better performance.
