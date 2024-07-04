@@ -73,6 +73,8 @@ Minecraft<br>
 香肠派对<br>
 Milthm<br>
 幻塔<br>
+鸣潮<br>
+绝区零<br>
 
 # Others:
 The module is compatible with A-SOUL Games Optimization.
