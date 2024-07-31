@@ -1,4 +1,4 @@
-Crème Brûlée 16/Thuringer 14(756):
+Crème Brûlée 16/Financier 14(756):
 Adjust the super resolution (Pixelworks X7P) of games such as Genshin Impact, Zenless Zone Zero, Wuthering Waves, Arena of Valor, Girl's Front 2, etc.
 Optimize frame insertion for 永劫无间手游(Pixelworks X7P).
 Optimize the dynamic refresh rate of most devices.
