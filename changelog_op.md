@@ -1,3 +1,27 @@
+Crème Brûlée 16/Thuringer 14(756):
+Adjust the super resolution (Pixelworks X7P) of games such as Genshin Impact, Zenless Zone Zero, Wuthering Waves, Arena of Valor, Girl's Front 2, etc.
+Optimize frame insertion for 永劫无间手游(Pixelworks X7P).
+Optimize the dynamic refresh rate of most devices.
+Enables all-brightness dynamic refresh rate for Ace3Pro.
+Greatly adjust the performance optimization section, it is recommended to use with FAS-RS (default is okay too).
+Optimize the audio performance of Ace3Pro.
+Optimize the image performance of Ace3Pro.
+Enable some new features for some devices.
+Optimize the module size.
+Optimize the installation process.
+Environment detection under APatch/Kernel SU is supported.
+Installation of A-SOUL Games Optimization is no longer enforced.
+Adapt to games that support IRX rendering acceleration, such as 天谕, 剑网三, 逆水寒 and so on.
+Optimize the super resolution and frame insertion (Pixelworks X7P) of 炽焰天穹.
+Cancel some adjustments to correct the abnormal function of the game assistant.
+Fixed power consumption anomalies caused by abnormal cpuset caused by forced installation of A-SOUL Games Optimization.
+Fixed abnormal functions of some models.
+Enable high-level-device identification and more animation for some devices.
+Enable more features for some devices.
+Optimize the refresh rate adjustment of GT6 series and GT5Pro.
+Update A-SOUL Games Optimization.
+Suppport Realme GT 6.
+
 Macaron 4/Thüringer 9(701):
 Update A-SOUL Opt to ver A.41.
 Support FI/SR for 绝区零(Official server) (OnePlus Ace 3/Pro only).
