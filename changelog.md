@@ -1,3 +1,9 @@
+Éclair 2(756):
+Sync sound effect update.
+Update A_SOUL Games Optimization.
+Support Redmi K70 Ultra(Xiaomi 14T Pro).
+Bug fixes.
+
 Pour Justice 8(701):
 Update A-SOUL Opt to ver A.41.
 Support 绝区零(Official server).
