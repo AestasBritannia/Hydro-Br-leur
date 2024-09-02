@@ -1,3 +1,11 @@
+Cannelé(800):
+Merge all versions into a single zip file.
+Multiple bugs fixed.
+Added various functions for each device.
+Performance/Renderer optimize updated.
+Improved speaker performance of certain devices.
+Other major updates.
+
 Éclair 2(756):
 Sync sound effect update.
 Update A_SOUL Games Optimization.
