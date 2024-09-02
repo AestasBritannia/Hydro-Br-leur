@@ -1,3 +1,11 @@
+Cannelé(800):
+Merge all versions into a single zip file.
+Multiple bugs fixed.
+Added various functions for each device.
+Performance/Renderer optimize updated.
+Improved speaker performance of certain devices.
+Other major updates.
+
 Crème Brûlée 16/Financier 14(756):
 Adjust the super resolution (Pixelworks X7P) of games such as Genshin Impact, Zenless Zone Zero, Wuthering Waves, Arena of Valor, Girl's Front 2, etc.
 Optimize frame insertion for 永劫无间手游(Pixelworks X7P).
