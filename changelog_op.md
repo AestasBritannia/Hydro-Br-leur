@@ -1,5 +1,5 @@
 Fiadone(850):
-Fixed abnormal camara functioning on K60Ultra.
+Fixed abnormal camera functioning on K60Ultra.
 Fixed abnormal boot issue on certain Realme/OnePlus devices.
 Improved sound quality, especially speaker performance.
 Sync system update for OnePlus Ace 3/3Pro, 12, Realme GT 5 Pro.
