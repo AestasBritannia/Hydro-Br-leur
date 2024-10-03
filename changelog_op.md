@@ -1,3 +1,14 @@
+Fiadone(850):
+Fixed abnormal camara functioning on K60Ultra.
+Fixed abnormal boot issue on certain Realme/OnePlus devices.
+Improved sound quality, especially speaker performance.
+Sync system update for OnePlus Ace 3/3Pro, 12, Realme GT 5 Pro.
+Support Realme 13 Pro series.
+Edited graphic config on certain devices.
+Remove volume limit for a2dp(bluetooth) devices.
+Stop enforcing any installation of AsoulOpt or ExtremeGT on OPPO devices.
+Other updates.
+
 Cannelé(800):
 Merge all versions into a single zip file.
 Multiple bugs fixed.
