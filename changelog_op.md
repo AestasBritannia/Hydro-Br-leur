@@ -1,3 +1,9 @@
+Liberté(870):
+Added support for Xiaomi 15/Pro.
+Added support for Realme GT 7 Pro.
+Added support for OnePlus 13.
+Support ColorOS 15 on OnePlus 12/Ace 3, Realme UI 6 on GT 5 Pro.
+
 Fiadone(850):
 Fixed abnormal camera functioning on K60Ultra.
 Fixed abnormal boot issue on certain Realme/OnePlus devices.
