@@ -1,3 +1,23 @@
+Fraternité(900), Egalité(880/890):
+Synchronize ColorOS 15 update for some devices.
+Update Extreme GT to adapt to Snapdragon 8 Elite (needs to be manually installed after decompression).
+Fixed an issue where voice assistant animations were lost due to rendering optimization.
+Fixed an issue where GPU adjustment causes lagging on Android 15 devices.
+Added optimized support for Snapdragon 8 Elite devices.
+Added support for turning off AudioX sound effects on new devices.
+Added support for new devices to select mandatory float output.
+Optimized speaker protection adjustments for some devices.
+Optimize refresh rate performance of some devices to improve smoothness.
+Added back the Dolby sound configuration switching function.
+Optimize equipment adjustments and try not to disrupt the original schedule of the equipment.
+Roll back game resolution adjustments on some devices to avoid performance bottlenecks.
+Roll back GPU adjustment to solve the problem of abnormal GPU frequency on some devices under the influence of gameopt.
+Rollback shell-temp masquerading to reduce impact on devices, handing this functionality over to the Extreme GT module.
+Optimize automatic brightness performance of ColorOS devices and reduce the extent of automatic brightness reduction.
+Adjust current update frequency to once per second to increase the accuracy of reading the power consumption in the device.
+Added support for some ColorOS features.
+Other bug fixes.
+
 Liberté(870):
 Added support for Xiaomi 15/Pro.
 Added support for Realme GT 7 Pro.
