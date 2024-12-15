@@ -1,3 +1,22 @@
+Lune(920):
+Add support for OPPO Find N3 (C15), OnePlus Open (OOS 14).
+Improve the installation process of AudioX/Dolby.
+Deleted some useless things.
+Fixed some problems.
+Support ColorOS15 of OnePlus Ace2Pro.
+Add navigation bar follow for some models.
+Fixed the abnormal minimum brightness of the inner screen of folding screen devices.
+Optimize the automatic brightness performance of the device.
+Fix the abnormal sound effect installation of OnePlus Ace2 and folding screen devices.
+Optimize the speaker performance of folding screen devices.
+Fixed some installation boot errors.
+Greatly optimized the speaker performance of Find N3/OnePlus Open.
+Fixed the crash problem when enabling Dolby sound effects for headphones on the above devices.
+Synchronize K60U audio update.
+Fixed the error when decompressing Dolby presets on some devices.
+Fixed the Hifi preset application error.
+Optimize the game frame rate performance of low-performance devices (Snapdragon 8Gen2 and worse).
+
 Fraternité(900), Egalité(880/890):
 Synchronize ColorOS 15 update for some devices.
 Update Extreme GT to adapt to Snapdragon 8 Elite (needs to be manually installed after decompression).
