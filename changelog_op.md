@@ -1,3 +1,23 @@
+Soleil(940):
+Optimize the system interaction smoothness of Find N3.
+Optimize the refresh rate strategy of Find N3 to improve smoothness.
+Optimize Find N3’s speaker Dolby performance.
+Optimize the speaker performance of Find N3 and OnePlus Ace 3 Pro.
+Incorporated OnePlus Ace 2 audio optimization.
+Support OnePlus Ace 5.
+Fixed some issues.
+Give up fighting against memory management to solve the lag problem.
+Support OnePlus Ace 5 series.
+Adjust some configurations of OnePlus 13.
+Fixed the issue of abnormal refresh rate of OnePlus Ace 5.
+Provide AI writing assistance function for OnePlus Ace 2.
+Trying to fix the problem that some devices on the MTK platform cannot use the camera.
+Fixed the issue where some Dimensity devices restart abnormally after starting the camera.
+For OnePlus Ace3/Pro, optimize 燕云十六声's frame generation.
+K60 Extreme Edition supports 燕云十六声's frame generation.
+Welcome the year of 2025.
+In memory of @execute_darker.
+
 Lune(920):
 Add support for OPPO Find N3 (C15), OnePlus Open (OOS 14).
 Improve the installation process of AudioX/Dolby.
