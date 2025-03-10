@@ -1,3 +1,16 @@
+Occitanie(960):
+Optimized audio performance on Find N3 and OnePlus 13.  
+Adjusted refresh rate strategy for some devices (which may result in an average daily power consumption increase of 20mA) to ensure smoothness.  
+Adapted support for Realme Neo7, Realme Neo7 SE, and OnePlus Pad.  
+Modified some installation prompts.  
+Synchronized certain features from Find N5 to Find N3.  
+Fixed refresh rate issues on some devices.  
+Fixed an issue where Find N3 incorrectly invoked the OnePlus Open configuration.  
+Brought down certain features to Ace 5 Pro.  
+Adjusted the priority of touch-related processes to resolve touch issues caused by small-core busyness on older platforms (earlier than 8750).  
+Adjusted surfaceflinger priority to improve touch responsiveness.  
+Miscellaneous adjustments.
+
 Soleil(940):
 Optimize the system interaction smoothness of Find N3.
 Optimize the refresh rate strategy of Find N3 to improve smoothness.
