@@ -1,3 +1,14 @@
+Essonne(1000): 
+Added support for global versions of Pagani(OnePlus 13T/13s), Dodge(OnePlus 13), and Giulia(OnePlus 13R).  
+Optimized refresh rate performance for certain devices.  
+Decoupled most feature enhancements to significantly reduce risks of missing functionalities or startup failures caused by system updates.  
+Added support for Realme GT7.  
+Fixed an issue where audio optimizations failed to install properly on some devices.  
+Resolved the problem where the "Music Separation" feature was unfunctioning on certain devices.  
+Updated Extreme GT.  
+Synchronized system updates.  
+Other optimizations.
+
 Occitanie(960):
 Optimized audio performance on Find N3 and OnePlus 13.  
 Adjusted refresh rate strategy for some devices (which may result in an average daily power consumption increase of 20mA) to ensure smoothness.  
