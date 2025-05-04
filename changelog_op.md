@@ -5,8 +5,9 @@ Decoupled most feature enhancements to significantly reduce risks of missing fun
 Added support for Realme GT7.  
 Fixed an issue where audio optimizations failed to install properly on some devices.  
 Resolved the problem where the "Music Separation" feature was unfunctioning on certain devices.  
-Updated Extreme GT.  
+Updated Extreme GT. It will no longer remove thermal-engine-v2.
 Synchronized system updates.  
+Removed adaptive frame insert optimization.
 Other optimizations.
 
 Occitanie(960):
