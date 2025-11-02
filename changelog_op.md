@@ -1,3 +1,11 @@
+Leipzig(1020):
+Support OnePlus 15, OnePlus Ace 6.
+Using float32 for USB out on OnePlus 15, leading to the best mobile audio performance (for USBDAC only).
+Fixed support for Oxygen OS devices.
+Not support devices launched earlier than OnePlus 13. They will be supported soon.
+Using JSON instead of shell script and XML files, in order to achieve better compatibility with other modules and system update.
+!!!REMOVED SUPPORT FOR XIAOMI DEVICES!!!
+
 Essonne(1000): 
 Added support for global versions of Pagani(OnePlus 13T/13s), Dodge(OnePlus 13), and Giulia(OnePlus 13R).  
 Optimized refresh rate performance for certain devices.  
