@@ -4,6 +4,7 @@ Using float32 for USB out on OnePlus 15, leading to the best mobile audio perfor
 Fixed support for Oxygen OS devices.
 Not support devices launched earlier than OnePlus 13. They will be supported soon.
 Using JSON instead of shell script and XML files, in order to achieve better compatibility with other modules and system update.
+Removed 384kHz sampling rate output on OnePlus 15 for better performance on DACs like CS43191/43198.
 !!!REMOVED SUPPORT FOR XIAOMI DEVICES!!!
 
 Essonne(1000): 
