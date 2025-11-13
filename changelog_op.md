@@ -1,10 +1,14 @@
+Main(1030):
+Support OnePlus 12, OnePlus Ace 2 Pro, OnePLus Ace 3/3V/3Pro and other certain devices.
+Fixed abnormal audio route on OnePlus 15.
+Removed 384kHz sampling rate output for better performance on DACs like CS43191/43198.
+
 Leipzig(1020):
 Support OnePlus 15, OnePlus Ace 6.
 Using float32 for USB out on OnePlus 15, leading to the best mobile audio performance (for USBDAC only).
 Fixed support for Oxygen OS devices.
 Not support devices launched earlier than OnePlus 13. They will be supported soon.
 Using JSON instead of shell script and XML files, in order to achieve better compatibility with other modules and system update.
-Removed 384kHz sampling rate output on OnePlus 15 for better performance on DACs like CS43191/43198.
 !!!REMOVED SUPPORT FOR XIAOMI DEVICES!!!
 
 Essonne(1000): 
