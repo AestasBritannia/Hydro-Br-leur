@@ -1,3 +1,8 @@
+Chocolate(1050):
+Support OnePlus Ace 6T, OnePlus 15T, OPPO K15 Pro +
+Fixed lots of bugs.
+Significantly improved speaker performance of OnePlus 15.
+
 Main(1030):
 Support OnePlus 12, OnePlus Ace 2 Pro, OnePLus Ace 3/3V/3Pro and other certain devices.
 Fixed abnormal audio route on OnePlus 15.
